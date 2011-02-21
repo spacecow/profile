@@ -1,3 +1,7 @@
 class Project < ActiveRecord::Base
-    attr_accessible :name
+  has_many :pages
+  
+  attr_accessible :name
+
+  validates :name, :presence => true, :uniqueness => true
 end

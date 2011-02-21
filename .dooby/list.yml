@@ -1,3 +1,5 @@
 --- 
-aaac66: !ruby/object:Dooby::Task 
-  todo: cucumbering page :doing
+47322c: !ruby/object:Dooby::Task 
+  todo: cucumbering page :done
+7a2f92: !ruby/object:Dooby::Task 
+  todo: add general section :done

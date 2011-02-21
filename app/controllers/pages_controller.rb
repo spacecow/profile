@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
+  before_filter :load_project, :only => [:new,:create,:edit,:update,:show]
+
   def index
+    @project = Project.find(params[:project_id])    
     @pages = Page.all
   end
 
@@ -13,9 +16,10 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.new(params[:page])
-    if @page.save
+    @project.pages << @page
+    if @project.save
       flash[:notice] = "Successfully created page."
-      redirect_to @page
+      redirect_to project_pages_path(@project)
     else
       render :action => 'new'
     end
@@ -23,13 +27,14 @@ class PagesController < ApplicationController
 
   def edit
     @page = Page.find(params[:id])
+    @page.sections.build
   end
 
   def update
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
       flash[:notice] = "Successfully updated page."
-      redirect_to page_url
+      redirect_to project_pages_path(@project)
     else
       render :action => 'edit'
     end
@@ -41,4 +46,11 @@ class PagesController < ApplicationController
     flash[:notice] = "Successfully destroyed page."
     redirect_to pages_url
   end
+
+  private
+
+    def load_project
+      @project = Project.find(params[:project_id])
+    end
+
 end

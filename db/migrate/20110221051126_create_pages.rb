@@ -1,7 +1,7 @@
 class CreatePages < ActiveRecord::Migration
   def self.up
     create_table :pages do |t|
-      t.name :string
+      t.string :name
       t.integer :project_id
       t.timestamps
     end

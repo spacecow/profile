@@ -2,18 +2,16 @@
 
 <table>
   <tr>
-    <th>String</th>
-    <th>Project</th>
+    <th>Name</th>
   </tr>
   <% for page in @pages %>
     <tr>
-      <td><%= page.string %></td>
-      <td><%= page.project_id %></td>
-      <td><%= link_to "Show", page %></td>
-      <td><%= link_to "Edit", edit_page_path(page) %></td>
-      <td><%= link_to "Destroy", page, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= page.name %></td>
+      <td><%= link_to "Show", [@project,page] %></td>
+      <td><%= link_to "Edit", edit_project_page_path(@project,page) %></td>
+      <td><%= link_to "Destroy", [@project,page], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Page", new_page_path(page) %></p>
+<p><%= link_to "New Page", new_project_page_path(@project,page) %></p>
