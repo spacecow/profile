@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'formtastic'
 
 group :development do
+  gem 'jquery-rails'
   gem "nifty-generators"
   gem "rspec-rails"
 end

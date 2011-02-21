@@ -3,5 +3,6 @@
   <%= f.semantic_fields_for :sections do |ref| %>
     <%= render 'section_fields', :f => ref %>
   <% end %>
+  <li><%= link_to_add_fields add(:section), f, :sections %></li>
   <%= f.submit %>
 <% end %>

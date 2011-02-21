@@ -3,3 +3,5 @@
   todo: cucumbering page :done
 7a2f92: !ruby/object:Dooby::Task 
   todo: add general section :done
+a1f6da: !ruby/object:Dooby::Task 
+  todo: adding sections on the fly :done
