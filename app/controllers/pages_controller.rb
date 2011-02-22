@@ -27,7 +27,6 @@ class PagesController < ApplicationController
 
   def edit
     @page = Page.find(params[:id])
-    @page.sections.build
   end
 
   def update

@@ -1,0 +1,2 @@
+class ListSection < Section
+end
