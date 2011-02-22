@@ -18,8 +18,18 @@
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
-      <%= content_tag :h2, yield(:subtitle) if show_subtitle? %>
+      <%= content_tag :h1, @project.title %>
+      <%= content_tag :h2, @project.subtitle %>
+      <%# content_tag :h1, yield(:title) if show_title? %>
+      <%# content_tag :h2, yield(:subtitle) if show_subtitle? %>
+      <div id="menu">
+        <ul>
+          <% @project.pages.each do |page| %>
+          <li><%= page.name %></li>
+          <% end %>
+        </ul>
+      </div>
+
       <%= yield %>
     </div>
   </body>

@@ -1,9 +1,14 @@
-/* line 9, ../../app/stylesheets/default.sass */
+/* line 10, ../../app/stylesheets/default.sass */
+body {
+  background: white;
+}
+
+/* line 12, ../../app/stylesheets/default.sass */
 a {
   color: #4b7399;
 }
 
-/* line 12, ../../app/stylesheets/default.sass */
+/* line 15, ../../app/stylesheets/default.sass */
 div#container {
   width: 900px;
   font: normal 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -18,30 +23,30 @@ div#container {
   background-image: -moz-linear-gradient(left, #ffffff 0%, #dddddd 33%, #ffffff 100%);
   background-image: linear-gradient(left, #ffffff 0%, #dddddd 33%, #ffffff 100%);
 }
-/* line 18, ../../app/stylesheets/default.sass */
+/* line 21, ../../app/stylesheets/default.sass */
 div#container h1 {
   font-size: 200%;
   text-align: center;
 }
-/* line 21, ../../app/stylesheets/default.sass */
+/* line 24, ../../app/stylesheets/default.sass */
 div#container h2 {
   font-size: 150%;
   text-align: center;
 }
 
-/* line 25, ../../app/stylesheets/default.sass */
+/* line 28, ../../app/stylesheets/default.sass */
 div#menu {
   width: 100px;
 }
-/* line 27, ../../app/stylesheets/default.sass */
+/* line 30, ../../app/stylesheets/default.sass */
 div#menu ul {
   list-style-type: none;
 }
-/* line 29, ../../app/stylesheets/default.sass */
+/* line 32, ../../app/stylesheets/default.sass */
 div#menu ul li:hover {
   background: #dddddd;
 }
-/* line 31, ../../app/stylesheets/default.sass */
+/* line 34, ../../app/stylesheets/default.sass */
 div#menu ul li {
   border: 1px solid black;
   -moz-border-radius: 8px;
@@ -50,6 +55,10 @@ div#menu ul li {
   -ms-border-radius: 8px;
   -khtml-border-radius: 8px;
   border-radius: 8px;
+  -moz-box-shadow: #777777 5px 5px 5px 0;
+  -webkit-box-shadow: #777777 5px 5px 5px 0;
+  -o-box-shadow: #777777 5px 5px 5px 0;
+  box-shadow: #777777 5px 5px 5px 0;
   background: white;
   padding: 2px 5px;
   margin-bottom: 5px;

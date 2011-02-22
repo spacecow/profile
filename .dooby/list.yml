@@ -9,3 +9,5 @@ f9aeb1: !ruby/object:Dooby::Task
   todo: adding special sections :done
 822cd8: !ruby/object:Dooby::Task 
   todo: styled front pages title/subtitle :done
+b455a8: !ruby/object:Dooby::Task 
+  todo: title/subtitle + menu should be in the default layout :done
