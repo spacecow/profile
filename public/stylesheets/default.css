@@ -1,0 +1,56 @@
+/* line 9, ../../app/stylesheets/default.sass */
+a {
+  color: #4b7399;
+}
+
+/* line 12, ../../app/stylesheets/default.sass */
+div#container {
+  width: 900px;
+  font: normal 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0%, #ffffff), color-stop(33%, #dddddd), color-stop(100%, #ffffff));
+  background-image: -moz-linear-gradient(left, #ffffff 0%, #dddddd 33%, #ffffff 100%);
+  background-image: linear-gradient(left, #ffffff 0%, #dddddd 33%, #ffffff 100%);
+}
+/* line 18, ../../app/stylesheets/default.sass */
+div#container h1 {
+  font-size: 200%;
+  text-align: center;
+}
+/* line 21, ../../app/stylesheets/default.sass */
+div#container h2 {
+  font-size: 150%;
+  text-align: center;
+}
+
+/* line 25, ../../app/stylesheets/default.sass */
+div#menu {
+  width: 100px;
+}
+/* line 27, ../../app/stylesheets/default.sass */
+div#menu ul {
+  list-style-type: none;
+}
+/* line 29, ../../app/stylesheets/default.sass */
+div#menu ul li:hover {
+  background: #dddddd;
+}
+/* line 31, ../../app/stylesheets/default.sass */
+div#menu ul li {
+  border: 1px solid black;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+  background: white;
+  padding: 2px 5px;
+  margin-bottom: 5px;
+}

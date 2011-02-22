@@ -1,9 +1,13 @@
-<% title "Project" %>
+<% title @project.title %>
+<% subtitle @project.subtitle %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+<div id="menu">
+  <ul>
+    <% @project.pages.each do |page| %>
+      <li><%= page.name %></li>
+    <% end %>
+  </ul>
+</div>
 
 <p>
   <%= link_to "Edit", edit_project_path(@project) %> |

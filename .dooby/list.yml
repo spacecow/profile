@@ -7,3 +7,5 @@ a1f6da: !ruby/object:Dooby::Task
   todo: adding sections on the fly :done
 f9aeb1: !ruby/object:Dooby::Task 
   todo: adding special sections :done
+822cd8: !ruby/object:Dooby::Task 
+  todo: styled front pages title/subtitle :done

@@ -42,6 +42,8 @@ GEM
     celerity (0.8.7)
     childprocess (0.1.6)
       ffi (~> 0.6.3)
+    compass (0.10.6)
+      haml (>= 3.0.4)
     configuration (1.2.0)
     cucumber (0.10.0)
       builder (>= 2.1.2)
@@ -65,6 +67,7 @@ GEM
       i18n (~> 0.4)
     gherkin (2.3.3)
       json (~> 1.4.6)
+    haml (3.0.25)
     i18n (0.5.0)
     jquery-rails (0.2.7)
       rails (~> 3.0)
@@ -144,6 +147,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  compass
   cucumber-rails
   database_cleaner
   factory_girl

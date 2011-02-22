@@ -6,9 +6,17 @@ module ApplicationHelper
     end
     link_to_function(name, "add_fields(this, '#{association}', '#{escape_javascript(fields)}')")
   end
+  def subtitle(page_subtitle, show_subtitle = true)
+    content_for(:subtitle){ page_subtitle.to_s }
+    @show_subtitle = show_subtitle
+  end  
 
   def add(s); t2(:add,s) end
   def chain(s1,s2); "#{s1.to_s}.#{s2.to_s}" end
   def lbl(s); chain(:label,s) end
   def t2(s1,s2); t(lbl(s1), :obj => t(s2)) end  
+
+  private
+
+    def show_subtitle?; @show_subtitle end
 end
