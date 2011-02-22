@@ -1,7 +1,7 @@
 <%= semantic_form_for [@project,@page] do |f| %>
   <%= f.input :name %>
   <%= f.semantic_fields_for :sections do |ref| %>
-    <%= render 'section_fields', :f => ref %>
+    <%= render section_template(ref.object), :f => ref %>
   <% end %>
   <li><%= link_to_add_fields add(:list_section), f, :sections, ListSection.new %></li>
   <li><%= link_to_add_fields add(:table_section), f, :sections, TableSection.new %></li>

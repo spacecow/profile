@@ -13,3 +13,5 @@ b455a8: !ruby/object:Dooby::Task
   todo: title/subtitle + menu should be in the default layout :done
 5410c1: !ruby/object:Dooby::Task 
   todo: add subsections to sections :done
+f0f8a6: !ruby/object:Dooby::Task 
+  todo: table fields :done

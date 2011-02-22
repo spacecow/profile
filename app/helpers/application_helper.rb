@@ -18,5 +18,6 @@ module ApplicationHelper
 
   private
 
+    def section_template(obj); "#{obj.class.to_s.underscore}_fields" end
     def show_subtitle?; @show_subtitle end
 end

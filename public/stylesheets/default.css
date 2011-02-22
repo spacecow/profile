@@ -89,7 +89,7 @@ form li label {
   text-align: right;
 }
 /* line 63, ../../app/stylesheets/default.sass */
-form li#list_section {
+form li#list_section, form li#table_section {
   border: 1px solid grey;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;

@@ -1,0 +1,2 @@
+class TableSubsection < Subsection
+end

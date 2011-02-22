@@ -5,6 +5,8 @@ en:
   list_field: "List Field"
   list_section: "List Section"
   listing: "Listing"
+  row: "Row"
+  table_row: "Table Row"
   table_section: "Table Section"
 
   label:
