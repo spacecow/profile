@@ -1,0 +1,2 @@
+class ListSubsection < Subsection
+end

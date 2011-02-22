@@ -1,14 +1,14 @@
-/* line 10, ../../app/stylesheets/default.sass */
+/* line 13, ../../app/stylesheets/default.sass */
 body {
   background: white;
 }
 
-/* line 12, ../../app/stylesheets/default.sass */
+/* line 15, ../../app/stylesheets/default.sass */
 a {
   color: #4b7399;
 }
 
-/* line 15, ../../app/stylesheets/default.sass */
+/* line 18, ../../app/stylesheets/default.sass */
 div#container {
   width: 900px;
   font: normal 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -23,30 +23,32 @@ div#container {
   background-image: -moz-linear-gradient(left, #ffffff 0%, #dddddd 33%, #ffffff 100%);
   background-image: linear-gradient(left, #ffffff 0%, #dddddd 33%, #ffffff 100%);
 }
-/* line 21, ../../app/stylesheets/default.sass */
+/* line 24, ../../app/stylesheets/default.sass */
 div#container h1 {
   font-size: 200%;
   text-align: center;
 }
-/* line 24, ../../app/stylesheets/default.sass */
+/* line 27, ../../app/stylesheets/default.sass */
 div#container h2 {
   font-size: 150%;
   text-align: center;
 }
 
-/* line 28, ../../app/stylesheets/default.sass */
+/* line 31, ../../app/stylesheets/default.sass */
 div#menu {
+  float: left;
   width: 100px;
+  margin-top: 10px;
 }
-/* line 30, ../../app/stylesheets/default.sass */
+/* line 35, ../../app/stylesheets/default.sass */
 div#menu ul {
   list-style-type: none;
 }
-/* line 32, ../../app/stylesheets/default.sass */
+/* line 37, ../../app/stylesheets/default.sass */
 div#menu ul li:hover {
   background: #dddddd;
 }
-/* line 34, ../../app/stylesheets/default.sass */
+/* line 39, ../../app/stylesheets/default.sass */
 div#menu ul li {
   border: 1px solid black;
   -moz-border-radius: 8px;
@@ -62,4 +64,37 @@ div#menu ul li {
   background: white;
   padding: 2px 5px;
   margin-bottom: 5px;
+}
+
+/* line 47, ../../app/stylesheets/default.sass */
+div#content {
+  margin: 10px 0 0 20px;
+  float: left;
+}
+
+/* line 52, ../../app/stylesheets/default.sass */
+form li {
+  list-style-type: none;
+  padding-right: 100px;
+}
+/* line 55, ../../app/stylesheets/default.sass */
+form li a {
+  margin-left: 105px;
+}
+/* line 58, ../../app/stylesheets/default.sass */
+form li label {
+  margin: 3px 5px 0 0;
+  float: left;
+  width: 100px;
+  text-align: right;
+}
+/* line 63, ../../app/stylesheets/default.sass */
+form li#list_section {
+  border: 1px solid grey;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
 }

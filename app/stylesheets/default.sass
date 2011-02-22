@@ -3,6 +3,9 @@
 @import "compass/css3/box-shadow"
 
 $menu_width: 100px
+$label_width: 100px
+$label_spacing: 5px
+$spacing: 10px
 
 $hover_background: #ddd
 $link_colour: #4B7399
@@ -26,7 +29,9 @@ div#container
     text-align: center
 
 div#menu
+  float: left
   width: $menu_width
+  margin-top: $spacing
   ul
     list-style-type: none
     li:hover
@@ -39,3 +44,22 @@ div#menu
       padding: 2px 5px
       margin-bottom: 5px
 
+div#content
+  margin: $spacing 0 0 2*$spacing
+  float: left
+
+form
+  li
+    list-style-type: none
+    padding-right: $label_width
+    a
+      margin-left: $label_width + $label_spacing
+  li
+    label
+      margin: 3px $label_spacing 0 0
+      float: left
+      width: $label_width
+      text-align: right
+  li#list_section
+    border: 1px solid grey
+    +border-radius(8px)

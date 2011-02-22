@@ -1,8 +1,12 @@
-<li>
-  List Section <br />
+<li id="list_section">
   <%= f.label :title %>
   <%= f.text_field :title %><br />
   <%= f.label :subtitle %>
   <%= f.text_field :subtitle %><br />
   <%= f.hidden_field :type %>
+  <ul><%= f.semantic_fields_for :subsections do |ref| %>
+    <%= render 'list_subsection_fields', :f => ref %>
+  <% end %>
+    <li><%= link_to_add_fields add(:list_field), f, :subsections, ListSubsection.new %></li>
+</ul>
 </li>
