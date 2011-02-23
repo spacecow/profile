@@ -15,3 +15,7 @@ b455a8: !ruby/object:Dooby::Task
   todo: add subsections to sections :done
 f0f8a6: !ruby/object:Dooby::Task 
   todo: table fields :done
+85cd74: !ruby/object:Dooby::Task 
+  todo: page show view :done
+62ddca: !ruby/object:Dooby::Task 
+  todo: add text section and subsection :done

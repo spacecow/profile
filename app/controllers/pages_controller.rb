@@ -19,7 +19,7 @@ class PagesController < ApplicationController
     @project.pages << @page
     if @project.save
       flash[:notice] = "Successfully created page."
-      redirect_to project_pages_path(@project)
+      redirect_to [@project,@page]
     else
       render :action => 'new'
     end
@@ -33,7 +33,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
       flash[:notice] = "Successfully updated page."
-      redirect_to project_pages_path(@project)
+      redirect_to [@project,@page]
     else
       render :action => 'edit'
     end

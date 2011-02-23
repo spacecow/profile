@@ -1,9 +1,9 @@
 <% title "Page" %>
 
-<p>
-  <strong>String:</strong>
-  <%= @page.name %>
-</p>
+<% @page.sections.each do |section| %>
+  <%= render show_template(section), :section => section,
+  :first => @page.sections.first == section %>
+<% end %>
 
 <p>
   <%= link_to "Edit", edit_project_page_path(@project,@page) %> |

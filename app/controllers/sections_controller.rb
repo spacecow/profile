@@ -1,5 +1,5 @@
 class SectionsController < ApplicationController
-  before_filter :load_project, :load_page, :only => [:index,:new,:create]
+  before_filter :load_project, :load_page, :only => [:index,:new,:create,:show]
 
   def index
     @sections = Section.all

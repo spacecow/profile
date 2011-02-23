@@ -1,0 +1,24 @@
+<div id="table_section" class="<%= first ? "first" : "" %>">
+<h3><%= section.title %></h3>
+<h4><%= section.subtitle %></h4>
+
+<% section.subsections.each do |subsection| %>
+  <div id="row">
+    <% if subsection.col1 %>
+    <div id="col1">
+      <%= raw subsection.col1.split("\r\n").join("<br />") %>
+    </div>
+    <% end %>
+    <% if subsection.col2 %>
+    <div id="col2">
+      <%= raw subsection.col2.split("\r\n").join("<br />") %>
+    </div>
+    <% end %>
+    <% if subsection.col3 %>
+    <div id="col3">
+      <%= raw subsection.col3.split("\r\n").join("<br />") %>
+    </div>
+    <% end %>
+  </div>
+<% end %>
+</div>

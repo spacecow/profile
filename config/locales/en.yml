@@ -2,12 +2,19 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  category: "Category"
   list_field: "List Field"
   list_section: "List Section"
   listing: "Listing"
+  remove: "Remove"
   row: "Row"
   table_row: "Table Row"
   table_section: "Table Section"
+  text: "Text"
+  text_paragraph: "Text Paragraph"
+  text_section: "Text Section"
+  year: "Year"
 
   label:
     add: "Add %{obj}"
+    remove: "Remove %{obj}"

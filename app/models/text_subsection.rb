@@ -1,0 +1,2 @@
+class TextSubsection < Subsection
+end

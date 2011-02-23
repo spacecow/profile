@@ -2,10 +2,20 @@
 @import "compass/css3/gradient"
 @import "compass/css3/box-shadow"
 
+$spacing: 10px
+$main_width: 900px
 $menu_width: 100px
+$content_width: $main_width - $menu_width - 6*$spacing - 2px
+$input_field_width: 400px
+$col1_width: 80px
+$col1_field_width: $col1_width
+$col2_width: 90px
+$col2_field_width: $col2_width
+$col3_width: $content_width - $col1_width - $col2_width - $spacing - 6px
+$col3_field_width: $input_field_width - $col1_field_width - $col2_field_width - 2*10px
 $label_width: 100px
 $label_spacing: 5px
-$spacing: 10px
+
 
 $hover_background: #ddd
 $link_colour: #4B7399
@@ -14,10 +24,12 @@ body
   background: white
 a
   color: $link_colour
+  text-decoration: none
 
 div#container
-  width: 900px
+  width: $main_width
   font: normal 14px "Helvetica Neue", Arial, Helvetica, sans-serif
+  padding: 2*$spacing 4*$spacing
   font-size: 14px
   +border-radius(10px)
   +linear-gradient(color-stops(white, #ddd 33%, white), left)
@@ -29,6 +41,7 @@ div#container
     text-align: center
 
 div#menu
+  font-weight: bold
   float: left
   width: $menu_width
   margin-top: $spacing
@@ -45,8 +58,58 @@ div#menu
       margin-bottom: 5px
 
 div#content
+  width: $content_width
+  background: white
+  border: 1px solid black
+  +border-radius(10px)
+  +box-shadow(#777,5px,5px,5px)  
+  padding: 2*$spacing
   margin: $spacing 0 0 2*$spacing
   float: left
+  h3
+    font-size: 24px
+  h4
+    font-size: 110%
+    font-style: italic
+  div#list_section, div#table_section
+    font-size: 16px
+    margin-top: 2*$spacing
+  div#text_section
+    font-size: 14px
+    margin-top: 2*$spacing
+  div#list_section.first, div#table_section.first, div#text_section.first
+    margin-top: 0
+  div#text_section
+    p.first
+      text-indent: 0
+      padding-top: 0
+    p
+      text-indent: 20px
+      padding-top: 5px
+  div#list_section
+    ul
+      li
+        margin-left: 2*$spacing
+  div#table_section
+    div#row:hover
+      background: $hover_background
+    div#row
+      float: left    
+      margin: 0
+      padding: 5px 0
+      div#col1
+        float: left
+        font-weight: bold
+        width: $col1_width
+        text-align: right
+        padding-right: $spacing
+      div#col2
+        float: left
+        width: $col2_width
+      div#col3
+        float: left
+        width: $col3_width
+      
 
 form
   li
@@ -60,6 +123,40 @@ form
       float: left
       width: $label_width
       text-align: right
-  li#list_section, li#table_section
+    label.hint
+      text-align: left
+      width: auto
+      margin-left: $label_width + $label_spacing
+    label.no_float
+      float: none
+  li#list_section, li#table_section, li#text_section
+    padding: $spacing 0
     border: 1px solid grey
     +border-radius(8px)
+    input
+      width: $input_field_width
+    ul
+      li
+        padding: 0
+        margin: 0
+        textarea
+          padding: 0
+          margin: 0
+          height: 70px
+          width: $input_field_width
+        textarea.col1
+          width: $col1_field_width
+          margin-left: $label_width + $label_spacing
+        textarea.col2
+          width: $col2_field_width
+        textarea.col3
+          width: $col3_field_width
+    div#category
+      float: right
+      text-align: right
+      font-size: 120%
+      margin-right: 2*$spacing
+      label
+        font-size: 80%
+      input
+        margin-top: 5px

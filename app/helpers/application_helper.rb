@@ -14,10 +14,12 @@ module ApplicationHelper
   def add(s); t2(:add,s) end
   def chain(s1,s2); "#{s1.to_s}.#{s2.to_s}" end
   def lbl(s); chain(:label,s) end
+  def remove(s); t2(:remove,s) end
   def t2(s1,s2); t(lbl(s1), :obj => t(s2)) end  
 
   private
 
     def section_template(obj); "#{obj.class.to_s.underscore}_fields" end
     def show_subtitle?; @show_subtitle end
+    def show_template(obj); "sections/#{obj.class.to_s.underscore}"  end
 end

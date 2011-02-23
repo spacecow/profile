@@ -1,6 +1,6 @@
-<li id="list_section">
+<li id="text_section">
   <div id="category">
-    List Section <br />
+    Text Section <br />
     <%= f.check_box :_destroy %>
     <%= f.label :_destroy, t(:remove) %>
   </div>
@@ -11,10 +11,10 @@
   <%= f.hidden_field :type %>
   <ul>
     <%= f.semantic_fields_for :subsections do |ref| %>
-      <%= render 'list_subsection_fields', :f => ref %>
+      <%= render 'text_subsection_fields', :f => ref %>
     <% end %>
     <li>
-      <%= link_to_add_fields add(:list_field), f, :subsections, ListSubsection.new %>
+      <%= link_to_add_fields add(:text_paragraph), f, :subsections, TextSubsection.new %>
     </li>
   </ul>
 </li>

@@ -1,0 +1,9 @@
+<div id="list_section" class="<%= first ? "first" : "" %>">
+<h3><%= section.title %></h3>
+<h4><%= section.subtitle %></h4>
+<ul>
+  <% section.subsections.each do |subsection| %>
+    <li><%= subsection.content %></li>
+  <% end %>
+</ul>
+</div>

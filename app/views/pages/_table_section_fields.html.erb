@@ -1,4 +1,9 @@
 <li id="table_section">
+  <div id="category">
+    Table Section <br />
+    <%= f.check_box :_destroy %>
+    <%= f.label :_destroy, t(:remove) %>
+  </div>  
   <%= f.label :title %>
   <%= f.text_field :title %><br />
   <%= f.label :subtitle %>

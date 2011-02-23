@@ -1,7 +1,6 @@
 <li>
-<%= f.text_area :col1, :class=>:col1 %>
-<%= f.text_area :col2, :class=>:col2 %>
-<%= f.text_area :col3, :class=>:col3 %>
+<%= f.label :content %>
+<%= f.text_area :content %>
 <%= f.check_box :_destroy %> 
 <%= f.label :_destroy, t(:remove), :class => :no_float %>
 <%= f.hidden_field :type %>

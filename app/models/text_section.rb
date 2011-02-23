@@ -1,0 +1,2 @@
+class TextSection < Section
+end

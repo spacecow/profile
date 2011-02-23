@@ -1,0 +1,7 @@
+<div id="text_section" class="<%= first ? "first" : "" %>">
+<h3><%= section.title %></h3>
+<h4><%= section.subtitle %></h4>
+<% section.subsections.each do |subsection| %>
+<p class="<%= section.subsections.first == subsection ? 'first' : '' %>"><%= subsection.content %></p>
+<% end %>
+</div>
