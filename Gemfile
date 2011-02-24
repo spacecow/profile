@@ -4,6 +4,8 @@ gem 'rails', '3.0.3'
 gem 'mysql2'
 gem 'formtastic'
 gem 'compass'
+gem 'mini_magick'
+gem 'carrierwave'
 
 group :development do
   gem 'jquery-rails'

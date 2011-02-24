@@ -1,0 +1,8 @@
+<li>
+<%= f.label :image %>
+<%= f.file_field :image %><br />
+<%= f.label :caption %>
+<%= f.text_field :caption %>
+<%= f.check_box :_destroy %> 
+<%= f.label :_destroy, t(:remove), :class => :no_float %>
+</li>

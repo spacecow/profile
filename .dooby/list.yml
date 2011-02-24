@@ -19,3 +19,9 @@ f0f8a6: !ruby/object:Dooby::Task
   todo: page show view :done
 62ddca: !ruby/object:Dooby::Task 
   todo: add text section and subsection :done
+eddd2f: !ruby/object:Dooby::Task 
+  todo: add postion to the section so they can switch places
+ffc016: !ruby/object:Dooby::Task 
+  todo: investigate if :dependent => :destroy works
+"413438": !ruby/object:Dooby::Task 
+  todo: upload pictures :done
