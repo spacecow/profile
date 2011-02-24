@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(:version => 20110223095754) do
   create_table "pictures", :force => true do |t|
     t.string   "image"
     t.string   "caption"
-    t.integer  "section_id"
+    t.integer  "project_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

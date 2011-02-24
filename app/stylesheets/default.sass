@@ -16,7 +16,7 @@ $col3_field_width: $input_field_width - $col1_field_width - $col2_field_width - 
 $label_width: 100px
 $label_spacing: 5px
 
-
+$error_colour: #f48989
 $hover_background: #ddd
 $link_colour: #4B7399
 
@@ -112,12 +112,15 @@ div#content
       
 
 form
+  li.error
+    background: $error_colour
+    p.inline-errors
+      margin-left: $label_width + $label_spacing
   li
     list-style-type: none
     padding-right: $label_width
     a
       margin-left: $label_width + $label_spacing
-  li
     label
       margin: 3px $label_spacing 0 0
       float: left
@@ -129,7 +132,9 @@ form
       margin-left: $label_width + $label_spacing
     label.no_float
       float: none
-  li#list_section, li#table_section, li#text_section
+    input
+      width: $input_field_width
+  li#list_section, li#table_section, li#text_section, div#picture_section
     padding: $spacing 0
     border: 1px solid grey
     +border-radius(8px)

@@ -1,6 +1,6 @@
-<%= semantic_form_for [@project,@page], :html => {:multipart => true} do |f| %>
+<%= semantic_form_for [@project,@page] do |f| %>
   <%= f.input :name %>
-  <%= f.semantic_fields_for :sections, :html => {:multipart => true} do |ref| %>
+  <%= f.semantic_fields_for :sections do |ref| %>
     <%= render section_template(ref.object), :f => ref %>
   <% end %>
   <li><%= link_to_add_fields add(:list_section), f, :sections, ListSection.new %></li>

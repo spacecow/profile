@@ -1,6 +1,12 @@
-<%= semantic_form_for @project do |f| %>
+<%= semantic_form_for @project, :html => {:multipart => true} do |f| %>
   <%= f.input :name %>
   <%= f.input :title %>
   <%= f.input :subtitle %>
+  <%= f.semantic_fields_for :pictures do |ref| %>
+    <%= render 'picture_fields', :f => ref %>
+  <% end %>
+  <li>
+    <%= link_to_add_fields add(:picture), f, :pictures, Picture.new %>
+  </li>
   <%= f.submit %>
 <% end %>

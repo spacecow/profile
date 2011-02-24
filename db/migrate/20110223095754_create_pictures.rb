@@ -3,8 +3,9 @@ class CreatePictures < ActiveRecord::Migration
     create_table :pictures do |t|
       t.string :image
       t.string :caption
-      t.integer :section_id
-
+      t.integer :project_id
+      t.string :name
+      
       t.timestamps
     end
   end

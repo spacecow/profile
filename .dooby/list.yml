@@ -25,3 +25,7 @@ ffc016: !ruby/object:Dooby::Task
   todo: investigate if :dependent => :destroy works
 "413438": !ruby/object:Dooby::Task 
   todo: upload pictures :done
+e768ea: !ruby/object:Dooby::Task 
+  todo: preview of picture uploaded
+a5991b: !ruby/object:Dooby::Task 
+  todo: pictures should be added to the project, not sections :done

@@ -6,9 +6,9 @@ Scenario: Create a new page
 When I go to that project's new page page
 And I fill in "Name" with "main"
 And I press "Create Page"
-Then I should be on that project's pages page
+Then a page should exist with name: "main", project: that project
+And I should be on that project's page's page
 And I should see "Successfully created page." as notice flash message
-And a page should exist with name: "main", project: that project
 And 1 pages should exist
 
 Scenario: A page name cannot be blank

@@ -13,14 +13,8 @@
     <%= f.semantic_fields_for :subsections do |ref| %>
       <%= render 'text_subsection_fields', :f => ref %>
     <% end %>
-    <%= f.semantic_fields_for :pictures do |ref| %>
-      <%= render 'picture_fields', :f => ref %>
-    <% end %>
     <li>
       <%= link_to_add_fields add(:text_paragraph), f, :subsections, TextSubsection.new %>
-    </li>
-    <li>
-      <%= link_to_add_fields add(:picture), f, :pictures, Picture.new %>
     </li>
   </ul>
 </li>

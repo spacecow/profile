@@ -32,8 +32,6 @@ class PagesController < ApplicationController
   def update
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
-      p "!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-      p Picture.all
       flash[:notice] = "Successfully updated page."
       redirect_to [@project,@page]
     else
