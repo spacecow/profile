@@ -29,3 +29,9 @@ e768ea: !ruby/object:Dooby::Task
   todo: preview of picture uploaded
 a5991b: !ruby/object:Dooby::Task 
   todo: pictures should be added to the project, not sections :done
+43ae94: !ruby/object:Dooby::Task 
+  todo: make sure all tags are erased before making a field visible with raw
+"658253": !ruby/object:Dooby::Task 
+  todo: add markup for pictures :done
+99d250: !ruby/object:Dooby::Task 
+  todo: javascript update of picture :done

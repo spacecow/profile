@@ -9,7 +9,11 @@ module ApplicationHelper
   def subtitle(page_subtitle, show_subtitle = true)
     content_for(:subtitle){ page_subtitle.to_s }
     @show_subtitle = show_subtitle
-  end  
+  end
+
+  def picture_link(lnk)
+    "<a class='thumbnail' href='' data-url='#{Picture.find_by_name(lnk).image.url}'>#{lnk}</a>"
+  end
 
   def add(s); t2(:add,s) end
   def chain(s1,s2); "#{s1.to_s}.#{s2.to_s}" end

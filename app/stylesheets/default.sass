@@ -20,6 +20,11 @@ $error_colour: #f48989
 $hover_background: #ddd
 $link_colour: #4B7399
 
+$h1_size: 28px
+$h1_line_height: $h1_size + 6px
+$h2_size: 21px
+$h2_line_height: $h2_size + 4px
+
 body
   background: white
 a
@@ -34,10 +39,12 @@ div#container
   +border-radius(10px)
   +linear-gradient(color-stops(white, #ddd 33%, white), left)
   h1
-    font-size: 200%
+    font-size: $h1_size
+    line-height: $h1_line_height
     text-align: center
   h2
-    font-size: 150%
+    font-size: $h2_size
+    line-height: $h2_line_height
     text-align: center
 
 div#menu
@@ -55,8 +62,10 @@ div#menu
       +box-shadow(#777,5px,5px,5px)  
       background: white
       padding: 2px 5px
-      margin-bottom: 5px
-
+      margin-bottom: 5px    
+  div#picture
+    border: 1px solid black
+  
 div#content
   width: $content_width
   background: white
@@ -165,3 +174,14 @@ form
         font-size: 80%
       input
         margin-top: 5px
+
+.thumbnail
+  span
+    position: absolute
+    display: block
+    margin: 0 auto
+    img
+      
+.thumbnail:hover
+  span
+    visibility: visible
