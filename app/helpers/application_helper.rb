@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def picture_link(lnk)
-    "<a class='thumbnail' href='' data-url='#{Picture.find_by_name(lnk).image.url}'>#{lnk}</a>"
+    "<a class='thumbnail' href='' data-url='#{Picture.find_by_name(lnk).image_url(:thumb)}'>#{lnk}</a>"
   end
 
   def add(s); t2(:add,s) end

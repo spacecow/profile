@@ -253,15 +253,3 @@ form li#list_section div#category label, form li#table_section div#category labe
 form li#list_section div#category input, form li#table_section div#category input, form li#text_section div#category input, form div#picture_section div#category input {
   margin-top: 5px;
 }
-
-/* line 179, ../../app/stylesheets/default.sass */
-.thumbnail span {
-  position: absolute;
-  display: block;
-  margin: 0 auto;
-}
-
-/* line 186, ../../app/stylesheets/default.sass */
-.thumbnail:hover span {
-  visibility: visible;
-}

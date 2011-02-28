@@ -35,3 +35,7 @@ a5991b: !ruby/object:Dooby::Task
   todo: add markup for pictures :done
 99d250: !ruby/object:Dooby::Task 
   todo: javascript update of picture :done
+ad954d: !ruby/object:Dooby::Task 
+  todo: an image should be editable without having to post additional information
+fc6a58: !ruby/object:Dooby::Task 
+  todo: delete a picture :done

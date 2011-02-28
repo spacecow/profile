@@ -28,3 +28,10 @@ Examples:
 | different | no    |       1 |
 | unique    | no    |       2 |
 | different | no    |       2 |
+
+@image
+Scenario: Upload a picture
+When I go to that project's edit page
+And I attach the file "public/images/rails.png" to "Image"
+And I press "Update Project"
+Then a picture should exist with image: "rails.png"
