@@ -3,11 +3,7 @@
 <h4><%= section.subtitle %></h4>
 <% section.subsections.each do |subsection| %>
 <p class="<%= section.subsections.first == subsection ? 'first' : '' %>">
-  <% if subsection.content.match(/#/) %> 
-    <%= raw subsection.content.gsub(/#(\w+)/){ picture_link($1) } %>
-  <% else %>
-    <%= subsection.content %>
-  <% end %>
+  <%= clean subsection.content %>
 </p>
 <% end %>
 </div>

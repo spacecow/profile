@@ -1,5 +1,7 @@
 <li>
 <%= f.label :content, t(:listing) %>
 <%= f.text_field :content %>
+<%= f.check_box :_destroy %> 
+<%= f.label :_destroy, t(:remove), :class => :no_float %>
 <%= f.hidden_field :type %>
 </li>

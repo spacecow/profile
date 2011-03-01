@@ -6,17 +6,17 @@
   <div id="row">
     <% if subsection.col1 %>
     <div id="col1">
-      <%= raw subsection.col1.split("\r\n").join("<br />") %>
+      <%= clean subsection.col1 %>
     </div>
     <% end %>
     <% if subsection.col2 %>
     <div id="col2">
-      <%= raw subsection.col2.split("\r\n").join("<br />") %>
+      <%= clean subsection.col2 %>
     </div>
     <% end %>
     <% if subsection.col3 %>
     <div id="col3">
-      <%= raw subsection.col3.split("\r\n").join("<br />") %>
+      <%= clean subsection.col3 %>
     </div>
     <% end %>
   </div>

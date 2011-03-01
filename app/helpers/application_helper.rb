@@ -1,4 +1,14 @@
 module ApplicationHelper
+  def clean(s)
+    if s.match(/\|/)
+      raw s.gsub(/<.+?>/,'').
+        gsub(/(\S+)\|(\w+)/){ picture_link($1,$2) }.
+        split("\r\n").join("<br />")
+    else
+      raw s.gsub(/<.+?>/,'').
+        split("\r\n").join("<br />")
+    end
+  end
   def link_to_add_fields(name, f, association, new_object)
  #   new_object = f.object.class.reflect_on_association(association).klass.new
     fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
@@ -11,8 +21,13 @@ module ApplicationHelper
     @show_subtitle = show_subtitle
   end
 
-  def picture_link(lnk)
-    "<a class='thumbnail' href='' data-url='#{Picture.find_by_name(lnk).image_url(:thumb)}'>#{lnk}</a>"
+  def picture_link(name,lnk)
+    picture = Picture.find_by_name(lnk)
+    if picture
+      "<a class='thumbnail' href='#{picture.image_url}' data-url='#{picture.image_url(:thumb)}'>#{name}</a>"
+    else
+      lnk
+    end
   end
 
   def add(s); t2(:add,s) end
