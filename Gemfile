@@ -6,10 +6,11 @@ gem 'formtastic'
 gem 'compass'
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'capistrano'
 
 group :development do
   gem 'jquery-rails'
-  gem "nifty-generators", :path => "~/ruby/rails/nifty-generators"
+  gem "nifty-generators" #, :path => "~/ruby/rails/nifty-generators"
   gem "rspec-rails"
 end
 
