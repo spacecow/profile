@@ -6,7 +6,6 @@ gem 'formtastic'
 gem 'compass'
 gem 'mini_magick'
 gem 'carrierwave'
-gem 'capistrano'
 
 group :development do
   gem 'jquery-rails'

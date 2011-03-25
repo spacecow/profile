@@ -6,21 +6,21 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :application, "profile"
-set :deploy_to, "/home/aurora/apps/#{application}"
-set :user, "aurora"
-set :admin_runner, "aurora"
+set :deploy_to, "/export/home/deploy/apps/#{application}"
+set :user, "deploy"
+set :admin_runner, "deploy"
   
-role :app, "sao.fir-vpc.riec.tohoku.ac.jp"
-role :web, "sao.fir-vpc.riec.tohoku.ac.jp"
-role :db,  "sao.fir-vpc.riec.tohoku.ac.jp", :primary => true
+role :app, "habu.firsec.riec.tohoku.ac.jp"
+role :web, "habu.firsec.riec.tohoku.ac.jp"
+role :db,  "habu.firsec.riec.tohoku.ac.jp", :primary => true
 
-set :rake, "~/.rvm/rubies/ruby-1.9.2-head/bin/rake"
+# set :rake, "/usr/local/bin/rake"
 set :default_environment, { 
-  'PATH' => "/home/aurora/.rvm/rubies/ruby-1.9.2-head/bin:/home/aurora/.rvm/gems/ruby-1.9.2-head/bin:/home/aurora/.rvm/bin:$PATH",
-  'RUBY_VERSION' => 'ruby 1.9.2',
-  'GEM_HOME' => '/home/aurora/.rvm/gems/ruby-1.9.2-head',
-  'GEM_PATH' => '/home/aurora/.rvm/gems/ruby-1.9.2-head' 
-}
+  'PATH' => "/usr/bin:/usr/sbin:/usr/ccs/bin:/usr/sfw/bin:/usr/local/bin:/opt/sfw/bin" }
+#   'RUBY_VERSION' => 'ruby 1.9.2',
+#   'GEM_HOME' => '/usr/local/bin/',
+#   'GEM_PATH' => '/usr/local/bin/'
+# }
 
 
 # If you are using Passenger mod_rails uncomment this:
