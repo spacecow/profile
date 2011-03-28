@@ -14,13 +14,14 @@ role :app, "habu.firsec.riec.tohoku.ac.jp"
 role :web, "habu.firsec.riec.tohoku.ac.jp"
 role :db,  "habu.firsec.riec.tohoku.ac.jp", :primary => true
 
-# set :rake, "/usr/local/bin/rake"
+#set :git, "/opt/csw/bin/git"
+#set :rake, "~/.rvm/rubies/ruby-1.9.2-head/bin/rake"
 set :default_environment, { 
-  'PATH' => "/usr/bin:/usr/sbin:/usr/ccs/bin:/usr/sfw/bin:/usr/local/bin:/opt/sfw/bin" }
-#   'RUBY_VERSION' => 'ruby 1.9.2',
-#   'GEM_HOME' => '/usr/local/bin/',
-#   'GEM_PATH' => '/usr/local/bin/'
-# }
+  'PATH' => "/opt/csw/bin:/usr/bin:/usr/local/bin"
+#  'RUBY_VERSION' => 'ruby 1.9.2',
+#  'GEM_HOME' => '/home/aurora/.rvm/gems/ruby-1.9.2-head',
+#  'GEM_PATH' => '/home/aurora/.rvm/gems/ruby-1.9.2-head' 
+}
 
 
 # If you are using Passenger mod_rails uncomment this:

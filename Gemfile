@@ -14,13 +14,14 @@ group :development do
 end
 
 group :test do
-  gem 'spork'
-  gem 'cucumber-rails'
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'pickle'
-  gem 'launchy'
-  gem 'factory_girl'
-  gem 'gherkin'
+#  gem 'spork'
+#  gem 'cucumber-rails'
+#  gem 'capybara'
+#  gem 'database_cleaner'
+#  gem 'pickle'
+#  gem 'launchy'
+#  gem 'factory_girl'
+#  gem 'gherkin'
 end
 gem "mocha", :group => :test
+# bundle install --without=test
