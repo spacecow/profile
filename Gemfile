@@ -10,7 +10,7 @@ gem 'carrierwave'
 group :development do
   gem 'jquery-rails'
   gem "nifty-generators" #, :path => "~/ruby/rails/nifty-generators"
-  gem "rspec-rails"
+#  gem "rspec-rails"
 end
 
 group :test do
