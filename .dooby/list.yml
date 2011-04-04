@@ -39,3 +39,5 @@ fc6a58: !ruby/object:Dooby::Task
   todo: delete a picture :done
 12a932: !ruby/object:Dooby::Task 
   todo: make sure all tags are erased before making a field visible with raw :done
+a88f0c: !ruby/object:Dooby::Task 
+  todo: adding authorization :done

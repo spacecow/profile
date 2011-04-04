@@ -7,8 +7,8 @@
     <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'print.css', :media => 'print' %>
     <!--[if lt IE 8]>
-      <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %>
-    <![endif]-->       
+    <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %>
+    <![endif]-->
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
@@ -16,12 +16,29 @@
   <body>
     <div id="container">
       <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
-      <%= content_tag :h1, @project.title %>
-      <%= content_tag :h2, @project.subtitle %>
+      <div class="clear"></div>
+      <div id="top_navigation">
+        <div id="language_navigation">
+          <%= link_to current_language, toggle_language_path %>
+        </div>
+        <div id="user_navigation">
+          <% if current_user %>
+          <%= t('message.welcome',:user=>current_user.username) %>
+          <%= t('message.not_you?') %>
+          <%= link_to t(:log_out), logout_path %>
+          <% else %>
+          <%= link_to t(:sign_up), signup_path %><%= t(:or) %><%= link_to t(:log_in), login_path %>
+          <% end %>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <%= content_tag :h1, @project.title if @project %>
+      <%= content_tag :h2, @project.subtitle if @project %>
       <%# content_tag :h1, yield(:title) if show_title? %>
       <%# content_tag :h2, yield(:subtitle) if show_subtitle? %>
+      <% if @project %>
       <div id="menu">
         <ul>
           <% @project.pages.each do |page| %>
@@ -31,6 +48,7 @@
         <div id="picture">
         </div>
       </div>
+      <% end %>
       <div id="content">
         <%= yield %>
       </div>

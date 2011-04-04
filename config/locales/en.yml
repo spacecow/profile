@@ -1,6 +1,3 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
   category: "Category"
   list_field: "List Field"
@@ -16,6 +13,60 @@ en:
   text_section: "Text Section"
   year: "Year"
 
+  admin: "Admin"
+  del: "Del"
+  delete: "Delete"
+  edit: "Edit"
+  english: "English"
+  japanese: "日本語"
+  log_in: "Log in"
+  log_out: "Log out"
+  member: "Member"
+  mini_admin: "mini-admin"
+  or: " or "
+  possessive: "%{owner}'s %{obj}"
+  profile: "Profile"
+  role: "Role"
+  show: "Show"
+  sign_up: "Sign up"
+  update: "Update"
   label:
     add: "Add %{obj}"
+    create: "Create %{obj}"
+    edit: "Edit %{obj}"
+    list: "List %{obj}"
+    new: "New %{obj}"
     remove: "Remove %{obj}"
+    send: "Send %{obj}"
+    show: "Show %{obj}"
+    update: "Update %{obj}"
+    verify: "Verify %{obj}"
+    view: "View %{obj}"
+    view_own: "View own %{obj}"
+  alert:
+    invalid_login_or_password: "Invalid login or password."
+  notice:
+    thank_you_for_sending: "Thank you. Your comment has been sent to the editor."
+    thank_you_for_signing_up: "Thank you for signing up! You are now logged in."
+  message:
+    not_you?: "Not you?"
+    sure?: "Are you sure?"
+    welcome: "Welcome %{user}."
+  success:
+    created: "Successfully created %{obj}."
+    deleted: "Successfully deleted %{obj}."
+    logged_out: "Successfully logged out."
+    logged_in: "Successfully logged in."
+    updated: "Successfully updated %{obj}."  
+  formtastic:
+    labels:
+      affiliation: "Affiliation"
+      content: "Content"
+      email: "Email"
+      name: "Name"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      username: "Username"
+
+  anonymous: "Anonymous"
+  comment: "Comment"

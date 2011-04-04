@@ -32,10 +32,17 @@ module ApplicationHelper
 
   def add(s); t2(:add,s) end
   def chain(s1,s2); "#{s1.to_s}.#{s2.to_s}" end
+  def current_language; english? ? t(:japanese) : t(:english) end
+  def edit_p(s); tp2(:edit,s) end
+  def ft(s); t("formtastic.labels.#{s.to_s}") end
   def lbl(s); chain(:label,s) end
+  def pl(s); t(s).match(/\w/) ? t(s).pluralize : t(s) end
   def remove(s); t2(:remove,s) end
+  def sure?; t('message.sure?') end
   def t2(s1,s2); t(lbl(s1), :obj => t(s2)) end  
-
+  def tp2(s1,s2); t(lbl(s1), :obj => pl(s2)) end
+  def update_p(s); tp2(:update,s) end
+  
   private
 
     def section_template(obj); "#{obj.class.to_s.underscore}_fields" end

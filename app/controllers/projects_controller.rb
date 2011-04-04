@@ -28,8 +28,6 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
-      p "!!!!!!!!!!!!!!!!!!!!!!"
-      p @project.pictures.first
       flash[:notice] = "Successfully updated project."
       redirect_to project_url
     else
