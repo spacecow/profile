@@ -11,7 +11,7 @@
       <td><%= section.title %></td>
       <td><%= section.subtitle %></td>
       <td><%= section.type %></td>
-      <td><%= link_to "Show", [@project,@page,section.class.superclass] %></td>
+      <td><%= link_to "Show", [@project,@page,section] %></td>
       <td><%= link_to "Edit", edit_project_page_section_path(@project,@page,section) %></td>
       <td><%= link_to "Destroy", [@project,@page,section], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
