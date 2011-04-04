@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  load_and_authorize_resource
   before_filter :load_project, :only => [:new,:create,:edit,:update,:show]
 
   def index
@@ -43,7 +44,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     @page.destroy
     flash[:notice] = "Successfully destroyed page."
-    redirect_to pages_url
+    redirect_to project_pages_path(@project)
   end
 
   private

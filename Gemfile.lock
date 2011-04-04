@@ -94,6 +94,8 @@ GEM
     mime-types (1.16)
     mini_magick (3.2)
       subexec (~> 0.0.4)
+    mocha (0.9.11)
+      rake
     mysql2 (0.2.6)
     nokogiri (1.4.4)
     pickle (0.4.4)
@@ -168,6 +170,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   mini_magick
+  mocha
   mysql2
   nifty-generators!
   pickle

@@ -1,5 +1,6 @@
 <% title "Projects" %>
 
+<% if can? :new, Project %>
 <table>
   <tr>
     <th>Name</th>
@@ -15,3 +16,6 @@
 </table>
 
 <p><%= link_to "New Project", new_project_path(project) %></p>
+<% else %>
+  Welcome...
+<% end %>

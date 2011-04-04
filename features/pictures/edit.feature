@@ -3,6 +3,8 @@ Background:
 Given a project "1" exists
 And a page exists with project: that project
 And a picture exists with project: that project, name: "normal"
+And a user exists with roles_mask: 2
+And I am logged in as that user
 
 Scenario Outline: Picture cannot have its name blank
 When I go to that project's edit page
