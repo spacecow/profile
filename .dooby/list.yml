@@ -41,5 +41,7 @@ fc6a58: !ruby/object:Dooby::Task
   todo: make sure all tags are erased before making a field visible with raw :done
 a88f0c: !ruby/object:Dooby::Task 
   todo: adding authorization :done
-f10cad: !ruby/object:Dooby::Task 
-  todo: configure authorization with rspec :doing
+916fc5: !ruby/object:Dooby::Task 
+  todo: image tag and pdf tag :doing
+97977e: !ruby/object:Dooby::Task 
+  todo: image tag and pdf tag :done

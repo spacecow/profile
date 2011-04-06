@@ -2,7 +2,7 @@ module ApplicationHelper
   def clean(s)
     if s.match(/\|/)
       raw s.gsub(/<.+?>/,'').
-        gsub(/(\S+)\|(\w+)/){ picture_link($1,$2) }.
+        gsub(/(\S+)\|(\w+)=(\w+)/){ $2=="img" ? picture_link($1,$3) : pdf_link($1,$3)}.
         split("\r\n").join("<br />")
     else
       raw s.gsub(/<.+?>/,'').
@@ -28,6 +28,10 @@ module ApplicationHelper
     else
       lnk
     end
+  end
+
+  def pdf_link(name,file)
+    "<a href='/images/#{file}.pdf'>#{name}</a>"
   end
 
   def add(s); t2(:add,s) end
