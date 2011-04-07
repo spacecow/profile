@@ -2,11 +2,11 @@
   <%= f.input :name %>
   <%= f.input :title %>
   <%= f.input :subtitle %>
-  <%= f.semantic_fields_for :pictures do |ref| %>
+  <%= f.semantic_fields_for :pictures, :html => {:multipart => true} do |ref| %>
     <%= render 'picture_fields', :f => ref %>
   <% end %>
   <li><%= link_to_add_fields add(:picture), f, :pictures, Picture.new %></li>
-  <%= f.semantic_fields_for :papers do |ref| %>
+  <%= f.semantic_fields_for :papers, :html => {:multipart => true} do |ref| %>
     <%= render 'paper_fields', :f => ref %>
   <% end %>
   <li><%= link_to_add_fields add(:paper), f, :papers, Paper.new %></li>

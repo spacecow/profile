@@ -7,7 +7,9 @@ Factory.define :picture do |f|
 end
 
 Factory.define :project do |f|
-  f.sequence(:name){|n| "Default project name #{n}"}  
+  f.sequence(:name){|n| "Default project name #{n}"}
+  f.sequence(:title){|n| "Default project title #{n}"}
+  f.sequence(:subtitle){|n| "Default project subtitle #{n}"}
 end
 
 Factory.define :section do |f|

@@ -4,4 +4,5 @@ class Paper < ActiveRecord::Base
   mount_uploader :file, PaperUploader
   
   validates :name, :presence => true, :uniqueness => {:scope => :project_id}
+  validates :file, :presence => true
 end

@@ -47,9 +47,13 @@ dfb3d0: !ruby/object:Dooby::Task
   todo: secure download with password
 74ecd0: !ruby/object:Dooby::Task 
   todo: add papers to project model :done
-05abb5: !ruby/object:Dooby::Task 
-  todo: add placeholders :doing
 964d79: !ruby/object:Dooby::Task 
   todo: the add ... links should be kept at the bottom
 8c3b39: !ruby/object:Dooby::Task 
   todo: add placeholders :done
+b078c8: !ruby/object:Dooby::Task 
+  todo: javascript test for adding a paper :doing
+3f8cc6: !ruby/object:Dooby::Task 
+  todo: paper file extension, size...
+194c8d: !ruby/object:Dooby::Task 
+  todo: javascript test for adding a paper :done

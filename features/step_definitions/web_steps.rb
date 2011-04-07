@@ -91,8 +91,9 @@ When /^(?:|I )choose "([^"]*)"(?: within "([^"]*)")?$/ do |field, selector|
   end
 end
 
-When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"(?: within "([^"]*)")?$/ do |path, field, selector|
+When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"(?: within "([^"]*)")?$/ do |relpath, field, selector|
   with_scope(selector) do
+    path = "#{File.join(::Rails.root.to_s, relpath)}" 
     attach_file(field, path)
   end
 end
