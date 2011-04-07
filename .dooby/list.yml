@@ -41,7 +41,11 @@ fc6a58: !ruby/object:Dooby::Task
   todo: make sure all tags are erased before making a field visible with raw :done
 a88f0c: !ruby/object:Dooby::Task 
   todo: adding authorization :done
-916fc5: !ruby/object:Dooby::Task 
-  todo: image tag and pdf tag :doing
 97977e: !ruby/object:Dooby::Task 
   todo: image tag and pdf tag :done
+dfb3d0: !ruby/object:Dooby::Task 
+  todo: secure download with password
+87adb3: !ruby/object:Dooby::Task 
+  todo: add papers to project model :doing
+74ecd0: !ruby/object:Dooby::Task 
+  todo: add papers to project model :done

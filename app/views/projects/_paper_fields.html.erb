@@ -1,0 +1,20 @@
+<div id="paper">
+<li id="paper_name_input" class="<%= @project.errors['papers.name'].empty? ? '' : 'error'%>">
+  <%= f.label :name %>
+  <%= f.text_field :name, :input_html => {:hint => "Yeah"} %>
+  <%= f.check_box :_destroy %> 
+  <%= f.label :_destroy, t(:remove), :class => :no_float %>
+  <% unless @project.errors['papers.name'].empty? %>
+    <p class="inline-errors"><%= @project.errors['papers.name'].join(',') %></p>
+  <% end %>
+</li>
+<li>
+  <%# f.label :image %>
+  <%# f.file_field :image %>
+</li>
+<li>
+  <%# f.label :caption %>
+  <%# f.text_field :caption %>
+  <%# f.hidden_field :updated_at %>
+</li>
+</div>
