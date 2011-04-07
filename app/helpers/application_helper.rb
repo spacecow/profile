@@ -30,8 +30,13 @@ module ApplicationHelper
     end
   end
 
-  def pdf_link(name,file)
-    "<a href='/images/#{file}.pdf'>#{name}</a>"
+  def pdf_link(name,lnk)
+    paper = Paper.find_by_name(lnk)
+    if paper
+      link_to(name, download_project_paper_path(paper))
+    else
+      lnk
+    end
   end
 
   def add(s); t2(:add,s) end

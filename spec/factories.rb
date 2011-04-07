@@ -2,6 +2,12 @@ Factory.define :page do |f|
   f.name "Default page name"
 end
 
+Factory.define :paper do |f|
+  f.name "Default paper name"
+  p PaperUploader.new("features/grid.pdf")
+  f.file "hej"
+end
+
 Factory.define :picture do |f|
   f.name "Default picture name"
 end

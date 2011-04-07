@@ -17,7 +17,12 @@ Profile::Application.routes.draw do
     resources :pages do
       resources :sections
     end
+    resources :papers, :only => :download do
+      member do
+        get 'download'
+      end
+    end
   end
-
+  
   root :to => "projects#index"
 end
