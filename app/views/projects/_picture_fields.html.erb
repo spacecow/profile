@@ -1,9 +1,11 @@
-<div id="picture_section">
+<div id="picture">
+  <div id="category">
+    Picture Section <br />
+    <%= f.check_box :_destroy %>
+    <%= f.label :_destroy, t(:remove) %>
+  </div>  
 <li id="picture_name_input" class="<%= @project.errors['pictures.name'].empty? ? '' : 'error'%>">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.check_box :_destroy %> 
-  <%= f.label :_destroy, t(:remove), :class => :no_float %>
+  <%= f.input :name, :hint => "A unique name for your image."  %>
   <% unless @project.errors['pictures.name'].empty? %>
     <p class="inline-errors"><%= @project.errors['pictures.name'].join(',') %></p>
   <% end %>

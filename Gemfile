@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
 gem 'mysql2'
-gem 'formtastic'
+gem 'formtastic', :git => 'https://github.com/justinfrench/formtastic.git'
 gem 'compass'
 gem 'mini_magick'
 gem 'carrierwave'
@@ -19,7 +19,7 @@ end
 group :test do
   gem 'spork'
   gem 'cucumber-rails'
-  gem 'capybara', :git => 'https://github.com/jnicklas/capybara.git'
+  gem 'capybara' #, :git => 'https://github.com/jnicklas/capybara.git'
   gem 'database_cleaner'
   gem 'pickle'
   gem 'launchy'

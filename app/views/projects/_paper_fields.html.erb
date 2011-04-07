@@ -1,16 +1,18 @@
 <div id="paper">
+  <div id="category">
+    Paper Section <br />
+    <%= f.check_box :_destroy %>
+    <%= f.label :_destroy, t(:remove) %>
+  </div>  
 <li id="paper_name_input" class="<%= @project.errors['papers.name'].empty? ? '' : 'error'%>">
-  <%= f.label :name %>
-  <%= f.text_field :name, :input_html => {:hint => "Yeah"} %>
-  <%= f.check_box :_destroy %> 
-  <%= f.label :_destroy, t(:remove), :class => :no_float %>
+  <%= f.input :name , :hint => "A unique name for your paper file." %>
   <% unless @project.errors['papers.name'].empty? %>
     <p class="inline-errors"><%= @project.errors['papers.name'].join(',') %></p>
   <% end %>
 </li>
 <li>
-  <%# f.label :image %>
-  <%# f.file_field :image %>
+  <%= f.label :file %>
+  <%= f.file_field :file %>
 </li>
 <li>
   <%# f.label :caption %>

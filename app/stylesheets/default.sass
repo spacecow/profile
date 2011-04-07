@@ -130,6 +130,10 @@ form
     background: $error_colour
     p.inline-errors
       margin-left: $label_width + $label_spacing
+  p.inline-hints
+    margin-left: $label_width + $label_spacing
+    font-style: italic
+    font-size: 12px
   li
     list-style-type: none
     padding-right: $label_width
@@ -148,7 +152,7 @@ form
       float: none
     input
       width: $input_field_width
-  li#list_section, li#table_section, li#text_section, div#picture_section
+  li#list_section, li#table_section, li#text_section, div#picture, div#paper
     padding: $spacing 0
     border: 1px solid grey
     +border-radius(8px)
