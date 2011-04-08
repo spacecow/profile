@@ -17,8 +17,9 @@ Profile::Application.routes.draw do
     resources :pages do
       resources :sections
     end
-    resources :papers, :only => :download do
+    resources :papers do
       member do
+        get 'password'
         get 'download'
       end
     end

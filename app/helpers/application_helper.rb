@@ -33,7 +33,7 @@ module ApplicationHelper
   def pdf_link(name,lnk)
     paper = Paper.find_by_name(lnk)
     if paper
-      link_to(name, download_project_paper_path(paper))
+      link_to(name, password_project_paper_path(@project,paper, :title => name))
     else
       lnk
     end

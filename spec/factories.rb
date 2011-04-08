@@ -4,8 +4,7 @@ end
 
 Factory.define :paper do |f|
   f.name "Default paper name"
-  p PaperUploader.new("features/grid.pdf")
-  f.file "hej"
+  f.file File.open('features/grid.pdf')
 end
 
 Factory.define :picture do |f|
