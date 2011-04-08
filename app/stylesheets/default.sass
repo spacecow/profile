@@ -15,6 +15,7 @@ $col3_width: $content_width - $col1_width - $col2_width - $spacing - 6px
 $col3_field_width: $input_field_width - $col1_field_width - $col2_field_width - 2*10px
 $label_width: 100px
 $label_spacing: 5px
+$label_full_width: $label_width + $label_spacing
 
 $error_colour: #f48989
 $hover_background: #ddd
@@ -147,11 +148,13 @@ form
     label.hint
       text-align: left
       width: auto
-      margin-left: $label_width + $label_spacing
+      margin-left: $label_full_width
     label.no_float
       float: none
     input
       width: $input_field_width
+  input.submit
+    margin: $spacing/2 0 0 $label_full_width  
   li#list_section, li#table_section, li#text_section, div#picture, div#paper
     padding: $spacing 0
     border: 1px solid grey

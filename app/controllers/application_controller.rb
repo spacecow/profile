@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   helper_method :english?
-  
+
+  def alertify(act); t("alert.#{act}") end
   def d(s); t(s).downcase end
   def dp(s); pl(s).downcase end
   def english?; session[:language] == 'en' end

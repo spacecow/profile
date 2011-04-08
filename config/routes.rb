@@ -17,10 +17,10 @@ Profile::Application.routes.draw do
     resources :pages do
       resources :sections
     end
-    resources :papers do
+    resources :papers, :only => [:password,:download] do
       member do
         get 'password'
-        get 'download'
+        post 'download'
       end
     end
   end

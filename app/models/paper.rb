@@ -6,4 +6,6 @@ class Paper < ActiveRecord::Base
   
   validates :name, :presence => true, :uniqueness => {:scope => :project_id}
   validates :file, :presence => true
+
+  def extension; file.url.split('.').last end
 end

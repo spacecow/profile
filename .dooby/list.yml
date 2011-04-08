@@ -53,7 +53,7 @@ a88f0c: !ruby/object:Dooby::Task
   todo: paper file extension, size...
 194c8d: !ruby/object:Dooby::Task 
   todo: javascript test for adding a paper :done
-dfb3d0: !ruby/object:Dooby::Task 
-  todo: secure download with password
 3483f6: !ruby/object:Dooby::Task 
   todo: make factories work with paper upload :done
+7a9861: !ruby/object:Dooby::Task 
+  todo: secure download with password :done

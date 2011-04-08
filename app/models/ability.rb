@@ -5,7 +5,7 @@ class Ability
     can [:show,:index], Project
     can :show, Page
     can :create, User
-    can :password, Paper
+    can [:password,:download], Paper
 
     if user
       if user.role?(:member)

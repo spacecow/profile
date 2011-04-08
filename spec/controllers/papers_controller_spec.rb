@@ -17,7 +17,7 @@ describe PapersController do
   
   describe "a user is not logged in" do  
     papers_controller_actions.each do |action,req|
-      if action == "password"
+      if %w(password download).include?(action)        
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
           response.redirect_url.should_not eq(login_url)
@@ -38,7 +38,7 @@ describe PapersController do
     end
     
     papers_controller_actions.each do |action,req|
-      if action == "password"
+      if %w(password download).include?(action)        
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
           response.redirect_url.should_not eq(root_url)
@@ -59,7 +59,7 @@ describe PapersController do
     end
     
     papers_controller_actions.each do |action,req|
-      if action == "password"
+      if %w(password download).include?(action)        
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
           response.redirect_url.should_not eq(root_url)
@@ -80,7 +80,7 @@ describe PapersController do
     end
     
     papers_controller_actions.each do |action,req|
-      if action == "password"
+      if %w(password download).include?(action)        
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
           response.redirect_url.should_not eq(root_url)
@@ -101,7 +101,7 @@ describe PapersController do
     end
     
     papers_controller_actions.each do |action,req|
-      if action == "password"
+      if %w(password download).include?(action)
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
           response.redirect_url.should_not eq(root_url)
