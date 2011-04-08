@@ -6,9 +6,10 @@ And a picture exists with project: that project, name: "normal"
 And a user exists with roles_mask: 2
 And I am logged in as that user
 
+@blank
 Scenario Outline: Picture cannot have its name blank
 When I go to that project's edit page
-And I fill in "Name" with "<input>"
+And I fill in "Name" with "<input>" within the picture section
 And I press "Update Project"
 Then I should see <error> picture name error "can't be blank"
 Examples:

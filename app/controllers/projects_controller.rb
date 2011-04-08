@@ -28,7 +28,9 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Successfully updated project."
       redirect_to project_url
     else
-      render :action => 'edit'
+      p @project.errors
+      #redirect_to edit_project_path(@project)
+      render :action => 'new'
     end
   end
 
