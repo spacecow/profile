@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
     else
       p @project.errors
       #redirect_to edit_project_path(@project)
-      render :action => 'new'
+      render :action => 'edit'
     end
   end
 

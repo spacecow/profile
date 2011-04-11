@@ -21,8 +21,11 @@ class PapersController < ApplicationController
     @paper.title = params[:title]
   end
 
+  def destroy
+    @paper.destroy
+    redirect_to @project
+  end
+  
   private
-    def load_projects
-      @project = Project.find(params[:project_id])
-    end
+    def load_projects; @project = Project.find(params[:project_id]) end
 end

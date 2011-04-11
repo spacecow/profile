@@ -1,4 +1,6 @@
 Profile::Application.routes.draw do
+  get "pictures/destroy"
+
   match 'user/edit' => 'users#edit', :as => :edit_current_user
   match 'signup' => 'users#new', :as => :signup
   match 'logout' => 'sessions#destroy', :as => :logout
@@ -17,7 +19,8 @@ Profile::Application.routes.draw do
     resources :pages do
       resources :sections
     end
-    resources :papers, :only => [:password,:download] do
+    resources :pictures, :only => :destroy
+    resources :papers, :only => [:password,:download,:destroy] do
       member do
         get 'password'
         post 'download'

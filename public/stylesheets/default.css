@@ -108,44 +108,44 @@ div#content h4 {
   font-style: italic;
 }
 /* line 89, ../../app/stylesheets/default.sass */
-div#content div#list_section, div#content div#table_section {
-  font-size: 16px;
-  margin-top: 20px;
-}
-/* line 92, ../../app/stylesheets/default.sass */
-div#content div#text_section {
-  font-size: 14px;
-  margin-top: 20px;
-}
-/* line 95, ../../app/stylesheets/default.sass */
 div#content div#list_section.first, div#content div#table_section.first, div#content div#text_section.first {
   margin-top: 0;
 }
-/* line 98, ../../app/stylesheets/default.sass */
+/* line 91, ../../app/stylesheets/default.sass */
+div#content div#list_section {
+  font-size: 16px;
+  margin-top: 20px;
+}
+/* line 94, ../../app/stylesheets/default.sass */
+div#content div#text_section {
+  font-size: 16px;
+  margin-top: 20px;
+}
+/* line 97, ../../app/stylesheets/default.sass */
 div#content div#text_section p.first {
   text-indent: 0;
   padding-top: 0;
 }
-/* line 101, ../../app/stylesheets/default.sass */
+/* line 100, ../../app/stylesheets/default.sass */
 div#content div#text_section p {
   text-indent: 20px;
   padding-top: 5px;
 }
-/* line 106, ../../app/stylesheets/default.sass */
+/* line 105, ../../app/stylesheets/default.sass */
 div#content div#list_section ul li {
   margin-left: 20px;
 }
-/* line 109, ../../app/stylesheets/default.sass */
+/* line 108, ../../app/stylesheets/default.sass */
 div#content div#table_section div#row:hover {
   background: #dddddd;
 }
-/* line 111, ../../app/stylesheets/default.sass */
+/* line 110, ../../app/stylesheets/default.sass */
 div#content div#table_section div#row {
   float: left;
   margin: 0;
   padding: 5px 0;
 }
-/* line 115, ../../app/stylesheets/default.sass */
+/* line 114, ../../app/stylesheets/default.sass */
 div#content div#table_section div#row div#col1 {
   float: left;
   font-weight: bold;
@@ -153,15 +153,19 @@ div#content div#table_section div#row div#col1 {
   text-align: right;
   padding-right: 10px;
 }
-/* line 121, ../../app/stylesheets/default.sass */
+/* line 120, ../../app/stylesheets/default.sass */
 div#content div#table_section div#row div#col2 {
   float: left;
   width: 90px;
 }
-/* line 124, ../../app/stylesheets/default.sass */
+/* line 123, ../../app/stylesheets/default.sass */
 div#content div#table_section div#row div#col3 {
   float: left;
   width: 552px;
+}
+/* line 126, ../../app/stylesheets/default.sass */
+div#content div#pictures, div#content div#papers {
+  margin-bottom: 10px;
 }
 
 /* line 130, ../../app/stylesheets/default.sass */

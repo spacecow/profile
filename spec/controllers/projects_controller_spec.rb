@@ -16,7 +16,7 @@ describe ProjectsController do
   
   describe "a user is not logged in" do  
     projects_controller_actions.each do |action,req|
-      if %w(show index).include?(action)
+      if %w(index).include?(action)
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @project.id)
           response.redirect_url.should_not eq(login_url)
@@ -37,7 +37,7 @@ describe ProjectsController do
     end
     
     projects_controller_actions.each do |action,req|
-      if %w(show index).include?(action)
+      if %w(index).include?(action)
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @project.id)
           response.redirect_url.should_not eq(root_url)

@@ -1,6 +1,39 @@
 <% title @project.title %>
 <% subtitle @project.subtitle %>
 
+<div id="pictures">
+  <h3><%= pl(:picture) %></h3>
+  <% if @project.pictures.empty? %>
+    <%= no_dp(:picture) %>
+  <% else %>
+    <ul>
+      <% @project.pictures.each do |picture| %>
+        <li>
+          <%= picture.listing %>
+          <%= link_to t(:del), [@project,picture], :confirm => sure?, :method => :delete %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div id="papers">
+  <h3><%= pl(:paper) %></h3>
+  <% if @project.papers.empty? %>
+    <%= no_dp(:paper) %>
+  <% else %>
+    <ul>
+      <% @project.papers.each do |paper| %>
+        <li>
+          <%= paper.listing %>
+          <%= link_to t(:del), [@project,paper], :confirm => sure?, :method => :delete %>
+
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
 <p>
   <%= link_to "Edit", edit_project_path(@project) %> |
   <%= link_to "Destroy", @project, :confirm => 'Are you sure?', :method => :delete %> |

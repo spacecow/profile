@@ -59,5 +59,9 @@ a88f0c: !ruby/object:Dooby::Task
   todo: secure download with password :done
 3e0730: !ruby/object:Dooby::Task 
   todo: secure download with dynamic password
-475f96: !ruby/object:Dooby::Task 
-  todo: solve multipart problem with fields_for :doing
+f81258: !ruby/object:Dooby::Task 
+  todo: pages should have a number you can order after
+e4db7c: !ruby/object:Dooby::Task 
+  todo: can't solve multipart problem with fields_for
+6769f6: !ruby/object:Dooby::Task 
+  todo: remove image&paper remove option from form and add a delete option to the show page :done

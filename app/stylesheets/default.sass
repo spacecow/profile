@@ -86,15 +86,14 @@ div#content
   h4
     font-size: 110%
     font-style: italic
-  div#list_section, div#table_section
+  div#list_section.first, div#table_section.first, div#text_section.first
+    margin-top: 0
+  div#list_section
     font-size: 16px
     margin-top: 2*$spacing
   div#text_section
-    font-size: 14px
+    font-size: 16px
     margin-top: 2*$spacing
-  div#list_section.first, div#table_section.first, div#text_section.first
-    margin-top: 0
-  div#text_section
     p.first
       text-indent: 0
       padding-top: 0
@@ -124,7 +123,8 @@ div#content
       div#col3
         float: left
         width: $col3_width
-      
+  div#pictures, div#papers
+    margin-bottom: $spacing
 
 form
   li.error

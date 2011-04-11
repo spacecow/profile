@@ -9,5 +9,15 @@ Then /^I should see "([^"]*)" within the (\w+) "([^"]*)" listing$/ do |txt,order
   end
 end
 
-def list_no(order); "ul li:nth-child(#{digit order})" end
-def list_no(lst,order); "ul##{lst} li:nth-child(#{digit order})" end
+When /^I follow "([^"]*)" within the (\w+) listing$/ do |lnk,order|
+  When %(I follow "#{lnk}" within "#{list_no order}")
+end
+
+
+def list_no(lst=nil,order)
+  if lst.nil?
+    "ul li:nth-child(#{digit order})"
+  else
+    "ul##{lst} li:nth-child(#{digit order})"
+  end
+end
