@@ -12,6 +12,7 @@ $col1_field_width: $col1_width
 $col2_width: 90px
 $col2_field_width: $col2_width
 $col3_width: $content_width - $col1_width - $col2_width - $spacing - 6px
+$profile_picture_width: 200px
 $col3_field_width: $input_field_width - $col1_field_width - $col2_field_width - 2*10px
 $label_width: 100px
 $label_spacing: 5px
@@ -86,7 +87,7 @@ div#content
   h4
     font-size: 110%
     font-style: italic
-  div#list_section.first, div#table_section.first, div#text_section.first
+  div#list_section.first, div#table_section.first, div#text_section.first, div#profile_section.first
     margin-top: 0
   div#list_section
     font-size: 16px
@@ -104,7 +105,7 @@ div#content
     ul
       li
         margin-left: 2*$spacing
-  div#table_section
+  div#table_section, div#profile_section
     div#row:hover
       background: $hover_background
     div#row
@@ -122,7 +123,17 @@ div#content
         width: $col2_width
       div#col3
         float: left
+  div#table_section
+    div#row
+      div#col3
         width: $col3_width
+  div#profile_section        
+    img
+      float: right
+      width: $profile_picture_width
+    div#row
+      div#col3
+        width: $col3_width - $profile_picture_width        
   div#pictures, div#papers
     margin-bottom: $spacing
 
