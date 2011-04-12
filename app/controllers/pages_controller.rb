@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_filter :load_project
-  before_filter :find_page, :only => [:show,:edit,:update,:destroy]
+  before_filter :load_page, :only => [:show,:edit,:update,:destroy]
   load_and_authorize_resource
 
   def index
@@ -43,6 +43,6 @@ class PagesController < ApplicationController
 
   private
 
-    def load_project; @project = Project.find(params[:project_id]) end
-    def find_page; @page = @project.pages.find(params[:id]) end 
+    def load_project; @project = Project.find_by_name(params[:project_id]) end
+    def load_page; @page = @project.pages.find_by_name(params[:id]) end 
 end

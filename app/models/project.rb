@@ -9,4 +9,6 @@ class Project < ActiveRecord::Base
   attr_accessible :name, :title, :subtitle, :pictures_attributes, :papers_attributes
 
   validates :name, :presence => true, :uniqueness => true
+
+  def to_param; name end
 end

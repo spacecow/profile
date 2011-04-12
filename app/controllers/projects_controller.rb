@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_filter :load_project, :only => [:show,:edit,:update,:destroy]
   load_and_authorize_resource
   
   def index
@@ -38,4 +39,7 @@ class ProjectsController < ApplicationController
     flash[:notice] = "Successfully destroyed project."
     redirect_to projects_url
   end
+
+  private
+    def load_project; @project = Project.find_by_name(params[:id]) end
 end
