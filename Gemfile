@@ -12,18 +12,18 @@ gem "bcrypt-ruby", :require => "bcrypt"
 
 group :development do
   gem 'jquery-rails'
-  gem "nifty-generators", :path => "~/ruby/rails/nifty-generators"
-  gem "rspec-rails"
+  # gem "nifty-generators", :path => "~/ruby/rails/nifty-generators"
+  # gem "rspec-rails"
 end
 
 group :test do
-  gem 'spork'
-  gem 'cucumber-rails'
-  gem 'capybara' #, :git => 'https://github.com/jnicklas/capybara.git'
-  gem 'database_cleaner'
-  gem 'pickle', "0.4.7", :git => 'https://github.com/spacecow/pickle.git'
-  gem 'launchy'
-  gem 'factory_girl'
-  gem 'gherkin'
-  gem 'mocha'
+  # gem 'spork'
+  # gem 'cucumber-rails'
+  # gem 'capybara' #, :git => 'https://github.com/jnicklas/capybara.git'
+  # gem 'database_cleaner'
+  # gem 'pickle', "0.4.7", :git => 'https://github.com/spacecow/pickle.git'
+  # gem 'launchy'
+  # gem 'factory_girl'
+  # gem 'gherkin'
+  # gem 'mocha'
 end
