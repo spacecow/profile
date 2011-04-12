@@ -71,7 +71,9 @@ f81258: !ruby/object:Dooby::Task
   todo: file has to be included
 84c17e: !ruby/object:Dooby::Task 
   todo: file name has to be checked for only letter
-d7955b: !ruby/object:Dooby::Task 
-  todo: load pages through project in controller
 8125e3: !ruby/object:Dooby::Task 
   todo: secure download with dynamic password :done
+4f5928: !ruby/object:Dooby::Task 
+  todo: permalink
+b1e06e: !ruby/object:Dooby::Task 
+  todo: load pages through project in controller :done

@@ -4,7 +4,8 @@ end
 
 Factory.define :paper do |f|
   f.name "Default paper name"
-#  f.file File.open('features/default.pdf')
+  #  f.file File.open('features/default.pdf')
+  f.password "abc123"
 end
 
 Factory.define :picture do |f|

@@ -1,22 +1,19 @@
 class PagesController < ApplicationController
+  before_filter :load_project
+  before_filter :find_page, :only => [:show,:edit,:update,:destroy]
   load_and_authorize_resource
-  before_filter :load_project, :only => [:new,:create,:edit,:update,:show]
 
   def index
-    @project = Project.find(params[:project_id])    
-    @pages = Page.all
+    @pages = @project.pages
   end
 
   def show
-    @page = Page.find(params[:id])
   end
 
   def new
-    @page = Page.new
   end
 
   def create
-    @page = Page.new(params[:page])
     @project.pages << @page
     if @project.save
       flash[:notice] = "Successfully created page."
@@ -27,11 +24,9 @@ class PagesController < ApplicationController
   end
 
   def edit
-    @page = Page.find(params[:id])
   end
 
   def update
-    @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
       flash[:notice] = "Successfully updated page."
       redirect_to [@project,@page]
@@ -41,7 +36,6 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    @page = Page.find(params[:id])
     @page.destroy
     flash[:notice] = "Successfully destroyed page."
     redirect_to project_pages_path(@project)
@@ -49,8 +43,6 @@ class PagesController < ApplicationController
 
   private
 
-    def load_project
-      @project = Project.find(params[:project_id])
-    end
-
+    def load_project; @project = Project.find(params[:project_id]) end
+    def find_page; @page = @project.pages.find(params[:id]) end 
 end
