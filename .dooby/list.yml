@@ -57,15 +57,21 @@ a88f0c: !ruby/object:Dooby::Task
   todo: make factories work with paper upload :done
 7a9861: !ruby/object:Dooby::Task 
   todo: secure download with password :done
-3e0730: !ruby/object:Dooby::Task 
-  todo: secure download with dynamic password
 f81258: !ruby/object:Dooby::Task 
   todo: pages should have a number you can order after
-e4db7c: !ruby/object:Dooby::Task 
-  todo: can't solve multipart problem with fields_for
 6769f6: !ruby/object:Dooby::Task 
   todo: remove image&paper remove option from form and add a delete option to the show page :done
 44343f: !ruby/object:Dooby::Task 
   todo: add possibility to delete picture&paper in the form :done
 6dece7: !ruby/object:Dooby::Task 
   todo: pickle file load :done
+0aea67: !ruby/object:Dooby::Task 
+  todo: solved multipart problem with fields_for :done
+28d95e: !ruby/object:Dooby::Task 
+  todo: file has to be included
+84c17e: !ruby/object:Dooby::Task 
+  todo: file name has to be checked for only letter
+d7955b: !ruby/object:Dooby::Task 
+  todo: load pages through project in controller
+8125e3: !ruby/object:Dooby::Task 
+  todo: secure download with dynamic password :done

@@ -8,7 +8,7 @@ class PapersController < ApplicationController
         send_file path, :content_type => "application/#{@paper.extension}",
         :filename => @paper.file.filename
       else
-        flash[:alert] = alert(:file_does_not_exist)
+        flash[:alert] = alertify(:file_does_not_exist)
         redirect_to password_project_paper_path(@project,@paper, :title => params[:title])
       end
     else
