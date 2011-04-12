@@ -3,7 +3,7 @@ class PapersController < ApplicationController
   before_filter :load_projects
   
   def download
-    if params[:password] == "foobar"
+    if @paper.authenticate(params[:password])
       if @paper.file.url && File.exist?(path = @paper.file.url)
         send_file path, :content_type => "application/#{@paper.extension}",
         :filename => @paper.file.filename

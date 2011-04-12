@@ -22,7 +22,7 @@ module ApplicationHelper
   end
 
   def picture_link(name,lnk)
-    picture = Picture.find_by_name(lnk)
+    picture = @project.pictures.find_by_name(lnk)
     if picture
       "<a class='thumbnail' href='#{picture.image_url}' data-url='#{picture.image_url(:thumb)}'>#{name}</a>"
     else
@@ -31,7 +31,7 @@ module ApplicationHelper
   end
 
   def pdf_link(name,lnk)
-    paper = Paper.find_by_name(lnk)
+    paper = @project.papers.find_by_name(lnk)
     if paper
       link_to(name, password_project_paper_path(@project,paper, :title => name))
     else

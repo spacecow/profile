@@ -13,11 +13,15 @@ class Paper < ActiveRecord::Base
   def extension; file.url.split('.').last end
   def listing; "#{name} (#{file_url ? file.file.filename : ""})" end
 
-  private
+  def authenticate(pass)
+    return password_hash == encrypt_password(pass)
+  end
+  
+  def encrypt_password(pass)
+    BCrypt::Engine.hash_secret(pass, password_salt)
+  end
 
-    def encrypt_password(pass)
-      BCrypt::Engine.hash_secret(pass, password_salt)
-    end
+  private
     
     def prepare_password
       unless password.blank?
