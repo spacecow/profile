@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/spacecow/pickle.git
+  revision: f00eb8707b9e679b7e9730815871def3e13b5b14
+  specs:
+    pickle (0.4.7)
+      cucumber (>= 0.8)
+      rake
+
 PATH
   remote: ~/ruby/rails/nifty-generators
   specs:
@@ -98,9 +106,6 @@ GEM
       rake
     mysql2 (0.2.6)
     nokogiri (1.4.4)
-    pickle (0.4.7)
-      cucumber (>= 0.8)
-      rake
     polyglot (0.3.1)
     rack (1.2.2)
     rack-mount (0.6.14)
@@ -170,7 +175,7 @@ DEPENDENCIES
   mocha
   mysql2
   nifty-generators!
-  pickle (= 0.4.7)
+  pickle (= 0.4.7)!
   rails (= 3.0.5)
   rspec-rails
   spork

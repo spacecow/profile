@@ -67,3 +67,5 @@ e4db7c: !ruby/object:Dooby::Task
   todo: remove image&paper remove option from form and add a delete option to the show page :done
 44343f: !ruby/object:Dooby::Task 
   todo: add possibility to delete picture&paper in the form :done
+6dece7: !ruby/object:Dooby::Task 
+  todo: pickle file load :done

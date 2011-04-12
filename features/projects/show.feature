@@ -32,9 +32,9 @@ Given a <mdl> exists with project: that project, name: "name", <listing>
 When I go to that project page
 But I should see "name (<file>)" within the first listing
 Examples:
-| mdl     | mdls     | listing                      | file     |
-| picture | pictures | image: "boat.jpg"            | boat.jpg |
-| paper   | papers   | file: "grid.pdf"             | grid.pdf |
+| mdl     | mdls     | listing            | file     |
+| picture | pictures | image: "boat.jpg*" | boat.jpg |
+| paper   | papers   | file: "grid.pdf*"  | grid.pdf |
 
 @delete
 Scenario Outline: Delete a picture/paper
