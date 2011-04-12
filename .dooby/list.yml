@@ -65,3 +65,5 @@ e4db7c: !ruby/object:Dooby::Task
   todo: can't solve multipart problem with fields_for
 6769f6: !ruby/object:Dooby::Task 
   todo: remove image&paper remove option from form and add a delete option to the show page :done
+44343f: !ruby/object:Dooby::Task 
+  todo: add possibility to delete picture&paper in the form :done
