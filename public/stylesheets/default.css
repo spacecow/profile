@@ -217,7 +217,7 @@ form input.submit {
   margin: 5px 0 0 105px;
 }
 /* line 158, ../../app/stylesheets/default.sass */
-form li#list_section, form li#table_section, form li#text_section, form div#picture, form div#paper {
+form li#list_section, form li#table_section, form li#text_section, form div#picture, form div#paper, form li#profile_section {
   padding: 10px 0;
   border: 1px solid grey;
   -moz-border-radius: 8px;
@@ -228,46 +228,46 @@ form li#list_section, form li#table_section, form li#text_section, form div#pict
   border-radius: 8px;
 }
 /* line 162, ../../app/stylesheets/default.sass */
-form li#list_section input, form li#table_section input, form li#text_section input, form div#picture input, form div#paper input {
+form li#list_section input, form li#table_section input, form li#text_section input, form div#picture input, form div#paper input, form li#profile_section input {
   width: 400px;
 }
 /* line 165, ../../app/stylesheets/default.sass */
-form li#list_section ul li, form li#table_section ul li, form li#text_section ul li, form div#picture ul li, form div#paper ul li {
+form li#list_section ul li, form li#table_section ul li, form li#text_section ul li, form div#picture ul li, form div#paper ul li, form li#profile_section ul li {
   padding: 0;
   margin: 0;
 }
 /* line 168, ../../app/stylesheets/default.sass */
-form li#list_section ul li textarea, form li#table_section ul li textarea, form li#text_section ul li textarea, form div#picture ul li textarea, form div#paper ul li textarea {
+form li#list_section ul li textarea, form li#table_section ul li textarea, form li#text_section ul li textarea, form div#picture ul li textarea, form div#paper ul li textarea, form li#profile_section ul li textarea {
   padding: 0;
   margin: 0;
   height: 70px;
   width: 400px;
 }
 /* line 173, ../../app/stylesheets/default.sass */
-form li#list_section ul li textarea.col1, form li#table_section ul li textarea.col1, form li#text_section ul li textarea.col1, form div#picture ul li textarea.col1, form div#paper ul li textarea.col1 {
+form li#list_section ul li textarea.col1, form li#table_section ul li textarea.col1, form li#text_section ul li textarea.col1, form div#picture ul li textarea.col1, form div#paper ul li textarea.col1, form li#profile_section ul li textarea.col1 {
   width: 80px;
   margin-left: 105px;
 }
 /* line 176, ../../app/stylesheets/default.sass */
-form li#list_section ul li textarea.col2, form li#table_section ul li textarea.col2, form li#text_section ul li textarea.col2, form div#picture ul li textarea.col2, form div#paper ul li textarea.col2 {
+form li#list_section ul li textarea.col2, form li#table_section ul li textarea.col2, form li#text_section ul li textarea.col2, form div#picture ul li textarea.col2, form div#paper ul li textarea.col2, form li#profile_section ul li textarea.col2 {
   width: 90px;
 }
 /* line 178, ../../app/stylesheets/default.sass */
-form li#list_section ul li textarea.col3, form li#table_section ul li textarea.col3, form li#text_section ul li textarea.col3, form div#picture ul li textarea.col3, form div#paper ul li textarea.col3 {
+form li#list_section ul li textarea.col3, form li#table_section ul li textarea.col3, form li#text_section ul li textarea.col3, form div#picture ul li textarea.col3, form div#paper ul li textarea.col3, form li#profile_section ul li textarea.col3 {
   width: 210px;
 }
 /* line 180, ../../app/stylesheets/default.sass */
-form li#list_section div#category, form li#table_section div#category, form li#text_section div#category, form div#picture div#category, form div#paper div#category {
+form li#list_section div#category, form li#table_section div#category, form li#text_section div#category, form div#picture div#category, form div#paper div#category, form li#profile_section div#category {
   float: right;
   text-align: right;
   font-size: 120%;
   margin-right: 20px;
 }
 /* line 185, ../../app/stylesheets/default.sass */
-form li#list_section div#category label, form li#table_section div#category label, form li#text_section div#category label, form div#picture div#category label, form div#paper div#category label {
+form li#list_section div#category label, form li#table_section div#category label, form li#text_section div#category label, form div#picture div#category label, form div#paper div#category label, form li#profile_section div#category label {
   font-size: 80%;
 }
 /* line 187, ../../app/stylesheets/default.sass */
-form li#list_section div#category input, form li#table_section div#category input, form li#text_section div#category input, form div#picture div#category input, form div#paper div#category input {
+form li#list_section div#category input, form li#table_section div#category input, form li#text_section div#category input, form div#picture div#category input, form div#paper div#category input, form li#profile_section div#category input {
   margin-top: 5px;
 }

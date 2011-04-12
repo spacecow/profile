@@ -4,9 +4,12 @@ class ProjectsController < ApplicationController
   
   def index
     @projects = Project.all
+    redirect_to @projects.first if cannot? :admin, @project
   end
 
   def show
+    @pages = @project.pages
+    redirect_to [@project,@pages.first] if cannot? :admin, @project
   end
 
   def new
@@ -40,6 +43,8 @@ class ProjectsController < ApplicationController
     redirect_to projects_url
   end
 
+  def admin;  end
+  
   private
-    def load_project; @project = Project.find_by_name(params[:id]) end
+    def load_project; @project = Project.find(params[:id]) end
 end

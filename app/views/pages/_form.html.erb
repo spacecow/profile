@@ -3,6 +3,7 @@
   <%= f.semantic_fields_for :sections do |ref| %>
     <%= render section_template(ref.object), :f => ref %>
   <% end %>
+  <li><%= link_to_add_fields add(:profile_section), f, :sections, ProfileSection.new %></li>
   <li><%= link_to_add_fields add(:list_section), f, :sections, ListSection.new %></li>
   <li><%= link_to_add_fields add(:table_section), f, :sections, TableSection.new %></li>
   <li><%= link_to_add_fields add(:text_section), f, :sections, TextSection.new %></li>

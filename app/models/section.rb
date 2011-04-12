@@ -3,6 +3,8 @@ class Section < ActiveRecord::Base
   has_many :subsections, :dependent => :destroy
   accepts_nested_attributes_for :subsections, :allow_destroy => true
 
+  mount_uploader :image, ImageUploader
+  
   attr_accessible :title, :subtitle, :type, :subsections_attributes
 
   validates :page_id, :presence => true

@@ -1,0 +1,2 @@
+class ProfileSection < Section
+end
