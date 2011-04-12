@@ -8,5 +8,5 @@ class Page < ActiveRecord::Base
   validates :project_id, :presence => true
   validates :name, :presence => true, :uniqueness => {:scope => :project_id}
 
-#  def to_param; name end
+  def to_param; name end
 end

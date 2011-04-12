@@ -4,7 +4,6 @@ class ProjectsController < ApplicationController
   
   def index
     @projects = Project.all
-    redirect_to @projects.first if cannot? :admin, @project
   end
 
   def show
@@ -30,7 +29,7 @@ class ProjectsController < ApplicationController
   def update
     if @project.update_attributes(params[:project])
       flash[:notice] = "Successfully updated project."
-      redirect_to project_url
+      redirect_to projects_url
     else
       #redirect_to edit_project_path(@project)
       render :action => 'edit'
@@ -46,5 +45,5 @@ class ProjectsController < ApplicationController
   def admin;  end
   
   private
-    def load_project; @project = Project.find(params[:id]) end
+    def load_project; @project = Project.find_by_name(params[:id]) end
 end

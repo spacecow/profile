@@ -5,7 +5,7 @@ class Section < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
   
-  attr_accessible :title, :subtitle, :type, :subsections_attributes
+  attr_accessible :title, :subtitle, :type, :subsections_attributes, :image
 
   validates :page_id, :presence => true
 end

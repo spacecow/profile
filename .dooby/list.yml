@@ -81,3 +81,5 @@ b1e06e: !ruby/object:Dooby::Task
   todo: cannot create page&section at the same time
 a7b9d5: !ruby/object:Dooby::Task 
   todo: profile page :done
+7e3b08: !ruby/object:Dooby::Task 
+  todo: testing profile page :done

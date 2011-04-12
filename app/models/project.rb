@@ -10,5 +10,5 @@ class Project < ActiveRecord::Base
 
   validates :name, :presence => true, :uniqueness => true
 
-#  def to_param; name end
+  def to_param; name end
 end

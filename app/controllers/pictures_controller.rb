@@ -8,5 +8,5 @@ class PicturesController < ApplicationController
   end
 
   private
-    def load_projects; @project = Project.find(params[:project_id]) end
+    def load_projects; @project = Project.find_by_name(params[:project_id]) end
 end
