@@ -1,0 +1,8 @@
+<% title new(:setting) %>
+
+<%= render 'form' %>
+
+<div id="bottom_links">
+  <%= link_to view(:setting),
+  settings_path if can? :index, @Setting %>
+</div>

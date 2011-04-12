@@ -12,7 +12,9 @@ class ApplicationController < ActionController::Base
   helper_method :english?
 
   def alertify(act); t("alert.#{act}") end
+  def created(s); success(:created,s) end
   def d(s); t(s).downcase end
+  def deleted(s); success(:deleted,s) end
   def dp(s); pl(s).downcase end
   def english?; session[:language] == 'en' end
   def pl(s); t(s).match(/\w/) ? t(s).pluralize : t(s) end  

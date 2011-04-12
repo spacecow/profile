@@ -55,6 +55,7 @@ en:
       name: "Name"
       password: "Password"
       password_confirmation: "Password confirmation"
+      prefix: "Prefix"
       username: "Username"
     placeholders:
       name: "hejsna"
@@ -70,6 +71,7 @@ en:
   profile_section: "Profile Section"
   remove: "Remove"
   row: "Row"
+  setting: "Setting"
   submit: "Submit"
   table_row: "Table Row"
   table_section: "Table Section"

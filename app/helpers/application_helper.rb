@@ -43,11 +43,12 @@ module ApplicationHelper
   def chain(s1,s2); "#{s1.to_s}.#{s2.to_s}" end
   def current_language; english? ? t(:japanese) : t(:english) end
   def d(s); t(s).downcase end
-  def edit(s); t2(:edit,s) end
+  def edit(s); t2(:label,:edit,s) end
   def edit_p(s); tp2(:label,:edit,s) end
   def ft(s); t("formtastic.labels.#{s.to_s}") end
   def no_dp(s); tdp2(:message,:none,s) end
   def dp(s); t(s).match(/\w/) ? d(s).pluralize : d(s) end
+  def new(s); t2(:label,:new,s) end
   def pl(s); t(s).match(/\w/) ? t(s).pluralize : t(s) end
   def remove(s); t2(:remove,s) end
   def sure?; t('message.sure?') end
@@ -56,6 +57,7 @@ module ApplicationHelper
   def tp2(lbl,s1,s2); t(chain(lbl,s1), :obj => pl(s2)) end
   def update(s); t2(:update,s) end
   def update_p(s); tp2(:label,:update,s) end
+  def view(s); t2(:label,:view,s) end
   
   private
 

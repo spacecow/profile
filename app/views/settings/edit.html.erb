@@ -1,0 +1,10 @@
+<% title edit(:setting) %>
+
+<%= render 'form' %>
+
+<div id="bottom_links">
+  <% if can? :show, @setting -%>
+    <%= link_to t(:show), @setting %> |
+  <% end %>
+  <%= link_to view(:setting), settings_path if can? :index, Setting %>
+</div>
