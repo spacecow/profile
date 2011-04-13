@@ -8,7 +8,8 @@ Profile::Application.routes.draw do
   match 'logout' => 'sessions#destroy', :as => :logout
   match 'login' => 'sessions#new', :as => :login
   match 'toggle_language' => 'application#toggle_language', :as => :toggle_language
-    
+  match 'welcome' => 'projects#index'
+  
   resources :sessions
   resources :users do
     member do

@@ -21,6 +21,9 @@ end
 Factory.define :section do |f|
 end
 
+Factory.define :setting do
+end
+
 Factory.define :subsection do |f|
 end
 

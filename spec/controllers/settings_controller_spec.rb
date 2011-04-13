@@ -13,23 +13,12 @@ describe SettingsController do
   before(:each) do
     @setting = Factory(:setting)
   end
-
-  describe "a user is not logged in" do
-    before(:each) do
-      @user = Factory(:user)
-    end
-    
+  
+  describe "a user is not logged in" do  
     settings_controller_actions.each do |action,req|
-      if action=="index"
-        it "should reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @setting.id)
-          response.redirect_url.should_not eq(login_url)
-        end
-      else
-        it "should not reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @setting.id)
-          response.redirect_url.should eq(login_url)
-        end
+      it "should not reach the #{action} page" do
+        send("#{req}", "#{action}", :id => @setting.id)
+        response.redirect_url.should eq(login_url)
       end
     end
   end
@@ -41,16 +30,9 @@ describe SettingsController do
     end
     
     settings_controller_actions.each do |action,req|
-      if %w(new create show index).include?(action)
-        it "should reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @setting.id)
-          response.redirect_url.should_not eq(root_url)
-        end
-      else
-        it "should not reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @setting.id)
-          response.redirect_url.should eq(root_url)
-        end
+      it "should not reach the #{action} page" do
+        send("#{req}", "#{action}", :id => @setting.id)
+          response.redirect_url.should eq(welcome_url)
       end
     end    
   end
@@ -62,19 +44,19 @@ describe SettingsController do
     end
     
     settings_controller_actions.each do |action,req|
-      if %w(new create show index edit update).include?(action)
+      if %w(show index).include?(action)
         it "should reach the #{action} page" do
           send("#{req}", "#{action}", :id => @setting.id)
-          response.redirect_url.should_not eq(root_url)
+          response.redirect_url.should_not eq(welcome_url)
         end
       else
         it "should not reach the #{action} page" do
           send("#{req}", "#{action}", :id => @setting.id)
-          response.redirect_url.should eq(root_url)
+          response.redirect_url.should eq(welcome_url)
         end
       end
     end    
-  end  
+  end
 
   describe "an admin is logged in" do
     before(:each) do
@@ -83,9 +65,11 @@ describe SettingsController do
     end
     
     settings_controller_actions.each do |action,req|
-      it "should reach the #{action} page" do
-        send("#{req}", "#{action}", :id => @setting.id)
-        response.redirect_url.should_not eq(root_url)
+      if %w(show index new create edit update destroy).include?(action)        
+        it "should reach the #{action} page" do
+          send("#{req}", "#{action}", :id => @setting.id)
+          response.redirect_url.should_not eq(welcome_url)
+        end
       end
     end    
   end
@@ -99,8 +83,8 @@ describe SettingsController do
     settings_controller_actions.each do |action,req|
       it "should reach the #{action} page" do
         send("#{req}", "#{action}", :id => @setting.id)
-        response.redirect_url.should_not eq(root_url)
+        response.redirect_url.should_not eq(welcome_url)
       end
     end    
-  end  
+  end    
 end

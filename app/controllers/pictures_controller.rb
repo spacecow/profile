@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
-  load_and_authorize_resource
   before_filter :load_projects
+  load_and_authorize_resource
   
   def destroy
     @picture.destroy
