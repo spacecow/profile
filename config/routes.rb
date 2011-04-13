@@ -1,4 +1,6 @@
 Profile::Application.routes.draw do
+  resources :settings
+
   get "pictures/destroy"
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user

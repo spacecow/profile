@@ -1,0 +1,20 @@
+<% title pl(:setting) %>
+
+<table>
+  <tr>
+    <th><%= t('formtastic.labels.prefix') %></th>
+  </tr>
+  <% for setting in @settings %>
+    <tr>
+      <td><%= setting.prefix %></td>
+      <td><%= link_to t(:show), setting if can? :show, setting %></td>
+      <td><%= link_to t(:edit), edit_setting_path(setting) if can? :edit, setting %></td>
+      <td><%= link_to t(:del), setting, :confirm => sure?, :method => :delete if can? :destroy, setting %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div id="bottom_links">
+  <%= link_to new(:setting),
+  new_setting_path if can? :new, Setting %>
+</div>
