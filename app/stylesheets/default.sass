@@ -7,25 +7,57 @@ $main_width: 900px
 $menu_width: 100px
 $content_width: $main_width - $menu_width - 6*$spacing - 2px
 $input_field_width: 400px
-$col1_width: 80px
-$col1_field_width: $col1_width
-$col2_width: 90px
-$col2_field_width: $col2_width
-$col3_width: $content_width - $col1_width - $col2_width - $spacing - 6px
-$profile_picture_width: 200px
-$col3_field_width: $input_field_width - $col1_field_width - $col2_field_width - 2*10px
 $label_width: 100px
 $label_spacing: 5px
 $label_full_width: $label_width + $label_spacing
 
+$col1_width: 80px
+$col2_width: 90px
+$col3_width: $content_width - $col1_width - $col2_width - $spacing - 6px
+$profile_picture_width: 200px
+$col1_field_width: $col1_width
+$col2_field_width: $col2_width
+$col3_field_width: $input_field_width - $col1_field_width - $col2_field_width - 2*10px
+
 $error_colour: #f48989
-$hover_background: #ddd
+$hover_colour: #ddd
 $link_colour: #4B7399
 
 $h1_size: 28px
 $h1_line_height: $h1_size + 6px
 $h2_size: 21px
 $h2_line_height: $h2_size + 4px
+
+
+//Page Sections
+
+$list_left_margin: 2*$spacing
+$list_top_margin: 2*$spacing
+$list_padding: $spacing/2
+$list_font_size: 16px
+$table_font_size: 16px
+$table_row_padding: $spacing/2
+$text_font_size: 15px
+@mixin table-base
+  font-size: $table_font_size
+  div#row:hover
+    background: $hover_colour
+  div#row
+    float: left
+    margin: 0
+    padding: $table_row_padding 0
+    div#col1
+      float: left
+      font-weight: bold
+      width: $col1_width
+      text-align: right
+      padding-right: $spacing
+    div#col2
+      float: left
+      width: $col2_width
+    div#col3
+      float: left
+
 
 body
   background: white
@@ -63,7 +95,7 @@ div#menu
   ul
     list-style-type: none
     li:hover
-      background: $hover_background
+      background: $hover_colour
     li
       border: 1px solid black
       +border-radius(8px)
@@ -87,13 +119,49 @@ div#content
   h4
     font-size: 110%
     font-style: italic
-  div#list_section.first, div#table_section.first, div#text_section.first, div#profile_section.first
+
+  div#text_section.first, div#profile_section.first
+    margin-top: 0
+  
+
+  //List Section
+
+  div#list_section.first
     margin-top: 0
   div#list_section
-    font-size: 16px
-    margin-top: 2*$spacing
+    font-size: $list_font_size
+    margin-top: $list_top_margin
+    ul
+      li
+        margin-left: $list_left_margin
+        padding: $list_padding
+      li:hover
+        background: $hover_colour
+
+  // Table Section
+
+  div#table_section
+    +table-base
+    div#row
+      div#col3
+        width: $col3_width
+  div#table_section.first
+    margin-top: 0
+
+  div#profile_section        
+    +table-base
+    img
+      float: right
+      width: $profile_picture_width
+    div#row
+      div#col3
+        width: $col3_width - $profile_picture_width        
+
+
+  // Text Section
+
   div#text_section
-    font-size: 16px
+    font-size: $text_font_size
     margin-top: 2*$spacing
     p.first
       text-indent: 0
@@ -101,41 +169,11 @@ div#content
     p
       text-indent: 20px
       padding-top: 5px
-  div#list_section
-    ul
-      li
-        margin-left: 2*$spacing
-  div#table_section, div#profile_section
-    div#row:hover
-      background: $hover_background
-    div#row
-      float: left    
-      margin: 0
-      padding: 5px 0
-      div#col1
-        float: left
-        font-weight: bold
-        width: $col1_width
-        text-align: right
-        padding-right: $spacing
-      div#col2
-        float: left
-        width: $col2_width
-      div#col3
-        float: left
-  div#table_section
-    div#row
-      div#col3
-        width: $col3_width
-  div#profile_section        
-    img
-      float: right
-      width: $profile_picture_width
-    div#row
-      div#col3
-        width: $col3_width - $profile_picture_width        
+
+
   div#pictures, div#papers
     margin-bottom: $spacing
+
 
 form
   li.error
@@ -197,3 +235,6 @@ form
         font-size: 80%
       input
         margin-top: 5px
+
+div#bottom_links
+  margin-top: $spacing

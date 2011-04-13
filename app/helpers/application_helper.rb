@@ -24,12 +24,16 @@ module ApplicationHelper
   def picture_link(name,lnk)
     picture = @project.pictures.find_by_name(lnk)
     if picture
-      "<a class='thumbnail' href='#{picture.image_url}' data-url='#{picture.image_url}'>#{name}</a>"
+      "<a class='thumbnail' href='#{prefixed_url(picture.image_url)}' data-url='#{prefixed_url(picture.image_url)}'>#{name}</a>"
     else
       lnk
     end
   end
 
+  def main_setting; @main_setting ||= Setting.find_by_name("main") end
+  def prefix; main_setting ? "/#{main_setting.prefix}" : "" end
+  def prefixed_url(s); "#{prefix}#{s}" end
+  
   def pdf_link(name,lnk)
     paper = @project.papers.find_by_name(lnk)
     if paper

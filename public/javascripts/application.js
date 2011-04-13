@@ -8,7 +8,7 @@ function add_fields(link, association, content){
 $(function(){
   $("a.thumbnail").mouseover(function() {
     var url = $(this).attr("data-url");
-    $("div#thumbnail").html("<img src=\"" + url + "\" + width=\"100\"");
+    $("div#thumbnail").html("<img src=\"" + url + "\" + width=\"100\" />");
   });
 });
 

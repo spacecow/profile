@@ -1,15 +1,15 @@
-/* line 30, ../../app/stylesheets/default.sass */
+/* line 62, ../../app/stylesheets/default.sass */
 body {
   background: white;
 }
 
-/* line 32, ../../app/stylesheets/default.sass */
+/* line 64, ../../app/stylesheets/default.sass */
 a {
   color: #4b7399;
   text-decoration: none;
 }
 
-/* line 36, ../../app/stylesheets/default.sass */
+/* line 68, ../../app/stylesheets/default.sass */
 div#container {
   width: 900px;
   font: normal 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -25,43 +25,43 @@ div#container {
   background-image: -moz-linear-gradient(left, #ffffff 0%, #dddddd 33%, #ffffff 100%);
   background-image: linear-gradient(left, #ffffff 0%, #dddddd 33%, #ffffff 100%);
 }
-/* line 43, ../../app/stylesheets/default.sass */
+/* line 75, ../../app/stylesheets/default.sass */
 div#container h1 {
   font-size: 28px;
   line-height: 34px;
   text-align: center;
 }
-/* line 47, ../../app/stylesheets/default.sass */
+/* line 79, ../../app/stylesheets/default.sass */
 div#container h2 {
   font-size: 21px;
   line-height: 25px;
   text-align: center;
 }
-/* line 52, ../../app/stylesheets/default.sass */
+/* line 84, ../../app/stylesheets/default.sass */
 div#container div#top_navigation div#language_navigation {
   float: left;
 }
-/* line 54, ../../app/stylesheets/default.sass */
+/* line 86, ../../app/stylesheets/default.sass */
 div#container div#top_navigation div#user_navigation {
   float: right;
 }
 
-/* line 58, ../../app/stylesheets/default.sass */
+/* line 90, ../../app/stylesheets/default.sass */
 div#menu {
   font-weight: bold;
   float: left;
   width: 100px;
   margin-top: 10px;
 }
-/* line 63, ../../app/stylesheets/default.sass */
+/* line 95, ../../app/stylesheets/default.sass */
 div#menu ul {
   list-style-type: none;
 }
-/* line 65, ../../app/stylesheets/default.sass */
+/* line 97, ../../app/stylesheets/default.sass */
 div#menu ul li:hover {
   background: #dddddd;
 }
-/* line 67, ../../app/stylesheets/default.sass */
+/* line 99, ../../app/stylesheets/default.sass */
 div#menu ul li {
   border: 1px solid black;
   -moz-border-radius: 8px;
@@ -79,7 +79,7 @@ div#menu ul li {
   margin-bottom: 5px;
 }
 
-/* line 76, ../../app/stylesheets/default.sass */
+/* line 108, ../../app/stylesheets/default.sass */
 div#content {
   width: 738px;
   background: white;
@@ -98,137 +98,185 @@ div#content {
   margin: 10px 0 0 20px;
   float: left;
 }
-/* line 85, ../../app/stylesheets/default.sass */
+/* line 117, ../../app/stylesheets/default.sass */
 div#content h3 {
   font-size: 24px;
 }
-/* line 87, ../../app/stylesheets/default.sass */
+/* line 119, ../../app/stylesheets/default.sass */
 div#content h4 {
   font-size: 110%;
   font-style: italic;
 }
-/* line 90, ../../app/stylesheets/default.sass */
-div#content div#list_section.first, div#content div#table_section.first, div#content div#text_section.first, div#content div#profile_section.first {
+/* line 123, ../../app/stylesheets/default.sass */
+div#content div#text_section.first, div#content div#profile_section.first {
   margin-top: 0;
 }
-/* line 92, ../../app/stylesheets/default.sass */
+/* line 129, ../../app/stylesheets/default.sass */
+div#content div#list_section.first {
+  margin-top: 0;
+}
+/* line 131, ../../app/stylesheets/default.sass */
 div#content div#list_section {
   font-size: 16px;
   margin-top: 20px;
 }
-/* line 95, ../../app/stylesheets/default.sass */
-div#content div#text_section {
-  font-size: 16px;
-  margin-top: 20px;
-}
-/* line 98, ../../app/stylesheets/default.sass */
-div#content div#text_section p.first {
-  text-indent: 0;
-  padding-top: 0;
-}
-/* line 101, ../../app/stylesheets/default.sass */
-div#content div#text_section p {
-  text-indent: 20px;
-  padding-top: 5px;
-}
-/* line 106, ../../app/stylesheets/default.sass */
+/* line 135, ../../app/stylesheets/default.sass */
 div#content div#list_section ul li {
   margin-left: 20px;
+  padding: 5px;
 }
-/* line 109, ../../app/stylesheets/default.sass */
-div#content div#table_section div#row:hover, div#content div#profile_section div#row:hover {
+/* line 138, ../../app/stylesheets/default.sass */
+div#content div#list_section ul li:hover {
   background: #dddddd;
 }
-/* line 111, ../../app/stylesheets/default.sass */
-div#content div#table_section div#row, div#content div#profile_section div#row {
+/* line 143, ../../app/stylesheets/default.sass */
+div#content div#table_section {
+  font-size: 16px;
+}
+/* line 43, ../../app/stylesheets/default.sass */
+div#content div#table_section div#row:hover {
+  background: #dddddd;
+}
+/* line 45, ../../app/stylesheets/default.sass */
+div#content div#table_section div#row {
   float: left;
   margin: 0;
   padding: 5px 0;
 }
-/* line 115, ../../app/stylesheets/default.sass */
-div#content div#table_section div#row div#col1, div#content div#profile_section div#row div#col1 {
+/* line 49, ../../app/stylesheets/default.sass */
+div#content div#table_section div#row div#col1 {
   float: left;
   font-weight: bold;
   width: 80px;
   text-align: right;
   padding-right: 10px;
 }
-/* line 121, ../../app/stylesheets/default.sass */
-div#content div#table_section div#row div#col2, div#content div#profile_section div#row div#col2 {
+/* line 55, ../../app/stylesheets/default.sass */
+div#content div#table_section div#row div#col2 {
   float: left;
   width: 90px;
 }
-/* line 124, ../../app/stylesheets/default.sass */
-div#content div#table_section div#row div#col3, div#content div#profile_section div#row div#col3 {
+/* line 58, ../../app/stylesheets/default.sass */
+div#content div#table_section div#row div#col3 {
   float: left;
 }
-/* line 128, ../../app/stylesheets/default.sass */
+/* line 146, ../../app/stylesheets/default.sass */
 div#content div#table_section div#row div#col3 {
   width: 552px;
 }
-/* line 131, ../../app/stylesheets/default.sass */
+/* line 148, ../../app/stylesheets/default.sass */
+div#content div#table_section.first {
+  margin-top: 0;
+}
+/* line 151, ../../app/stylesheets/default.sass */
+div#content div#profile_section {
+  font-size: 16px;
+}
+/* line 43, ../../app/stylesheets/default.sass */
+div#content div#profile_section div#row:hover {
+  background: #dddddd;
+}
+/* line 45, ../../app/stylesheets/default.sass */
+div#content div#profile_section div#row {
+  float: left;
+  margin: 0;
+  padding: 5px 0;
+}
+/* line 49, ../../app/stylesheets/default.sass */
+div#content div#profile_section div#row div#col1 {
+  float: left;
+  font-weight: bold;
+  width: 80px;
+  text-align: right;
+  padding-right: 10px;
+}
+/* line 55, ../../app/stylesheets/default.sass */
+div#content div#profile_section div#row div#col2 {
+  float: left;
+  width: 90px;
+}
+/* line 58, ../../app/stylesheets/default.sass */
+div#content div#profile_section div#row div#col3 {
+  float: left;
+}
+/* line 153, ../../app/stylesheets/default.sass */
 div#content div#profile_section img {
   float: right;
   width: 200px;
 }
-/* line 135, ../../app/stylesheets/default.sass */
+/* line 157, ../../app/stylesheets/default.sass */
 div#content div#profile_section div#row div#col3 {
   width: 352px;
 }
-/* line 137, ../../app/stylesheets/default.sass */
+/* line 163, ../../app/stylesheets/default.sass */
+div#content div#text_section {
+  font-size: 15px;
+  margin-top: 20px;
+}
+/* line 166, ../../app/stylesheets/default.sass */
+div#content div#text_section p.first {
+  text-indent: 0;
+  padding-top: 0;
+}
+/* line 169, ../../app/stylesheets/default.sass */
+div#content div#text_section p {
+  text-indent: 20px;
+  padding-top: 5px;
+}
+/* line 174, ../../app/stylesheets/default.sass */
 div#content div#pictures, div#content div#papers {
   margin-bottom: 10px;
 }
 
-/* line 141, ../../app/stylesheets/default.sass */
+/* line 179, ../../app/stylesheets/default.sass */
 form li.error {
   background: #f48989;
 }
-/* line 143, ../../app/stylesheets/default.sass */
+/* line 181, ../../app/stylesheets/default.sass */
 form li.error p.inline-errors {
   margin-left: 105px;
 }
-/* line 145, ../../app/stylesheets/default.sass */
+/* line 183, ../../app/stylesheets/default.sass */
 form p.inline-hints {
   margin-left: 105px;
   font-style: italic;
   font-size: 12px;
 }
-/* line 149, ../../app/stylesheets/default.sass */
+/* line 187, ../../app/stylesheets/default.sass */
 form li {
   list-style-type: none;
   padding-right: 100px;
 }
-/* line 152, ../../app/stylesheets/default.sass */
+/* line 190, ../../app/stylesheets/default.sass */
 form li a {
   margin-left: 105px;
 }
-/* line 154, ../../app/stylesheets/default.sass */
+/* line 192, ../../app/stylesheets/default.sass */
 form li label {
   margin: 3px 5px 0 0;
   float: left;
   width: 100px;
   text-align: right;
 }
-/* line 159, ../../app/stylesheets/default.sass */
+/* line 197, ../../app/stylesheets/default.sass */
 form li label.hint {
   text-align: left;
   width: auto;
   margin-left: 105px;
 }
-/* line 163, ../../app/stylesheets/default.sass */
+/* line 201, ../../app/stylesheets/default.sass */
 form li label.no_float {
   float: none;
 }
-/* line 165, ../../app/stylesheets/default.sass */
+/* line 203, ../../app/stylesheets/default.sass */
 form li input {
   width: 400px;
 }
-/* line 167, ../../app/stylesheets/default.sass */
+/* line 205, ../../app/stylesheets/default.sass */
 form input.submit {
   margin: 5px 0 0 105px;
 }
-/* line 169, ../../app/stylesheets/default.sass */
+/* line 207, ../../app/stylesheets/default.sass */
 form li#list_section, form li#table_section, form li#text_section, form div#picture, form div#paper, form li#profile_section {
   padding: 10px 0;
   border: 1px solid grey;
@@ -239,47 +287,52 @@ form li#list_section, form li#table_section, form li#text_section, form div#pict
   -khtml-border-radius: 8px;
   border-radius: 8px;
 }
-/* line 173, ../../app/stylesheets/default.sass */
+/* line 211, ../../app/stylesheets/default.sass */
 form li#list_section input, form li#table_section input, form li#text_section input, form div#picture input, form div#paper input, form li#profile_section input {
   width: 400px;
 }
-/* line 176, ../../app/stylesheets/default.sass */
+/* line 214, ../../app/stylesheets/default.sass */
 form li#list_section ul li, form li#table_section ul li, form li#text_section ul li, form div#picture ul li, form div#paper ul li, form li#profile_section ul li {
   padding: 0;
   margin: 0;
 }
-/* line 179, ../../app/stylesheets/default.sass */
+/* line 217, ../../app/stylesheets/default.sass */
 form li#list_section ul li textarea, form li#table_section ul li textarea, form li#text_section ul li textarea, form div#picture ul li textarea, form div#paper ul li textarea, form li#profile_section ul li textarea {
   padding: 0;
   margin: 0;
   height: 70px;
   width: 400px;
 }
-/* line 184, ../../app/stylesheets/default.sass */
+/* line 222, ../../app/stylesheets/default.sass */
 form li#list_section ul li textarea.col1, form li#table_section ul li textarea.col1, form li#text_section ul li textarea.col1, form div#picture ul li textarea.col1, form div#paper ul li textarea.col1, form li#profile_section ul li textarea.col1 {
   width: 80px;
   margin-left: 105px;
 }
-/* line 187, ../../app/stylesheets/default.sass */
+/* line 225, ../../app/stylesheets/default.sass */
 form li#list_section ul li textarea.col2, form li#table_section ul li textarea.col2, form li#text_section ul li textarea.col2, form div#picture ul li textarea.col2, form div#paper ul li textarea.col2, form li#profile_section ul li textarea.col2 {
   width: 90px;
 }
-/* line 189, ../../app/stylesheets/default.sass */
+/* line 227, ../../app/stylesheets/default.sass */
 form li#list_section ul li textarea.col3, form li#table_section ul li textarea.col3, form li#text_section ul li textarea.col3, form div#picture ul li textarea.col3, form div#paper ul li textarea.col3, form li#profile_section ul li textarea.col3 {
   width: 210px;
 }
-/* line 191, ../../app/stylesheets/default.sass */
+/* line 229, ../../app/stylesheets/default.sass */
 form li#list_section div#category, form li#table_section div#category, form li#text_section div#category, form div#picture div#category, form div#paper div#category, form li#profile_section div#category {
   float: right;
   text-align: right;
   font-size: 120%;
   margin-right: 20px;
 }
-/* line 196, ../../app/stylesheets/default.sass */
+/* line 234, ../../app/stylesheets/default.sass */
 form li#list_section div#category label, form li#table_section div#category label, form li#text_section div#category label, form div#picture div#category label, form div#paper div#category label, form li#profile_section div#category label {
   font-size: 80%;
 }
-/* line 198, ../../app/stylesheets/default.sass */
+/* line 236, ../../app/stylesheets/default.sass */
 form li#list_section div#category input, form li#table_section div#category input, form li#text_section div#category input, form div#picture div#category input, form div#paper div#category input, form li#profile_section div#category input {
   margin-top: 5px;
+}
+
+/* line 239, ../../app/stylesheets/default.sass */
+div#bottom_links {
+  margin-top: 10px;
 }

@@ -5,8 +5,14 @@
   :first => @page.sections.first == section %>
 <% end %>
 
-<p>
-  <%= link_to "Edit", edit_project_page_path(@project,@page) %> |
-  <%= link_to "Destroy", [@project,@page], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", project_pages_path(@project) %>
-</p>
+<div id="bottom_links">
+  <% if can? :edit, @page %>
+    <%= link_to "Edit", edit_project_page_path(@project,@page) %> |
+  <% end %>
+  <% if can? :destroy, @page %>
+    <%= link_to "Destroy", [@project,@page], :confirm => sure?, :method => :delete %> |
+  <% end %>
+  <% if can? :index, Page %>
+    <%= link_to "View All", project_pages_path(@project) %>
+  <% end %>
+</div>

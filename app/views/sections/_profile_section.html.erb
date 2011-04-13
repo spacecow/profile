@@ -2,7 +2,7 @@
 <h3><%= section.title %></h3>
 <h4><%= section.subtitle %></h4>
 
-<img src="<%= section.image_url %>" />
+<img src="<%= prefixed_url(section.image_url) %>" />
 <% section.subsections.each do |subsection| %>
   <div id="row">
     <% if subsection.col1 %>
