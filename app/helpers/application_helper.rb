@@ -24,7 +24,7 @@ module ApplicationHelper
   def picture_link(name,lnk)
     picture = @project.pictures.find_by_name(lnk)
     if picture
-      "<a class='thumbnail' href='#{picture.image_url}' data-url='#{picture.image_url(:thumb)}'>#{name}</a>"
+      "<a class='thumbnail' href='#{picture.image_url}' data-url='#{picture.image_url}'>#{name}</a>"
     else
       lnk
     end
