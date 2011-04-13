@@ -14,10 +14,13 @@ $label_full_width: $label_width + $label_spacing
 $col1_width: 80px
 $col2_width: 90px
 $col3_width: $content_width - $col1_width - $col2_width - $spacing - 6px
+$col3_wide_width: $col3_width + $col2_width
 $profile_picture_width: 200px
 $col1_field_width: $col1_width
 $col2_field_width: $col2_width
 $col3_field_width: $input_field_width - $col1_field_width - $col2_field_width - 2*10px
+$col3_profile_width: $col3_width - $profile_picture_width
+$col3_wide_profile_width: $col3_wide_width - $profile_picture_width
 
 $error_colour: #f48989
 $hover_colour: #ddd
@@ -57,7 +60,8 @@ $text_font_size: 15px
       width: $col2_width
     div#col3
       float: left
-
+    div#col3_wide
+      float: left
 
 body
   background: white
@@ -145,17 +149,24 @@ div#content
     div#row
       div#col3
         width: $col3_width
+      div#col3_wide
+        width: $col3_wide_width
   div#table_section.first
     margin-top: 0
 
   div#profile_section        
-    +table-base
     img
       float: right
       width: $profile_picture_width
-    div#row
-      div#col3
-        width: $col3_width - $profile_picture_width        
+    div#table
+      h3
+        text-align: center
+      +table-base
+      div#row
+        div#col3
+          width: $col3_profile_width
+        div#col3_wide
+          width: $col3_wide_profile_width
 
 
   // Text Section

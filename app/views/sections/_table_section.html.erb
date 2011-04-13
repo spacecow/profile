@@ -4,20 +4,18 @@
 
 <% section.subsections.each do |subsection| %>
   <div id="row">
-    <% if subsection.col1 %>
-    <div id="col1">
-      <%= clean subsection.col1 %>
-    </div>
+    <% unless subsection.col1.blank? %>
+      <div id="col1"><%= clean subsection.col1 %></div>
     <% end %>
-    <% if subsection.col2 %>
-    <div id="col2">
-      <%= clean subsection.col2 %>
-    </div>
+    <% unless subsection.col2.blank? %>
+      <div id="col2"><%= clean subsection.col2 %></div>
     <% end %>
-    <% if subsection.col3 %>
-    <div id="col3">
-      <%= clean subsection.col3 %>
-    </div>
+    <% unless subsection.col3.blank? %>
+      <% if subsection.col2.blank? %>
+        <div id="col3_wide"><%= clean subsection.col3 %></div>
+      <% else %>
+        <div id="col3"><%= clean subsection.col3 %></div>
+      <% end %>
     <% end %>
   </div>
 <% end %>

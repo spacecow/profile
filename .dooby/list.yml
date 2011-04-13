@@ -85,3 +85,5 @@ a7b9d5: !ruby/object:Dooby::Task
   todo: testing profile page :done
 80bdac: !ruby/object:Dooby::Task 
   todo: " :done"
+cd46ff: !ruby/object:Dooby::Task 
+  todo: col3 is to small without col2 :done
