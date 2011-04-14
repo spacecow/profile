@@ -10,8 +10,12 @@ class ApplicationController < ActionController::Base
   end
   protect_from_forgery
 
-  helper_method :english?
+  helper_method :english?,:private_exchange
 
+  def private_exchange(s)
+    s.gsub(/projects\//,"")
+  end
+  
   def alertify(act); t("alert.#{act}") end
   def created(s); success(:created,s) end
   def d(s); t(s).downcase end

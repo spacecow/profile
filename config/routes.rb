@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 Profile::Application.routes.draw do
   resources :settings
 
@@ -7,8 +8,11 @@ Profile::Application.routes.draw do
   match 'login' => 'sessions#new', :as => :login
   match 'toggle_language' => 'application#toggle_language', :as => :toggle_language
   match 'welcome' => 'projects#index'
-  match '~koji(/:controller(/:id))', :project_id => "mizuno", :action => "show"
-  
+
+  match '~koji', :controller => "pages", :action => "show", :project_id => "~koji", :id => "プロフィール"
+  match '~koji/mizuno.html', :controller => "pages", :action => "show", :project_id => "~koji", :id => "プロフィール"
+  match '~koji(/:controller(/:id(/:action)))', :project_id => "~koji", :action => "show"
+
   resources :sessions
   resources :users do
     member do
@@ -29,6 +33,6 @@ Profile::Application.routes.draw do
       end
     end
   end
-  
+
   root :to => "projects#index"
 end

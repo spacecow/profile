@@ -37,7 +37,8 @@ module ApplicationHelper
   def pdf_link(name,lnk)
     paper = @project.papers.find_by_name(lnk)
     if paper
-      link_to(name, password_project_paper_path(@project,paper, :title => name))
+      session[:pdf_title] = name
+      link_to(name, private_exchange(password_project_paper_path(@project,paper)))
     else
       lnk
     end
@@ -52,7 +53,7 @@ module ApplicationHelper
     javascript_include_tag(s).gsub(/\/javascripts/,prefixed_url("/javascripts"))
   end
   def private_path(s)
-    "/~koji/pages/#{s.name}"
+    "/#{@project.name}/pages/#{s.name}"
   end
 
 #----------------------
