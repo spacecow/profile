@@ -43,6 +43,20 @@ module ApplicationHelper
     end
   end
 
+# Special routing hack
+  
+  def special_stylesheet_link_tag(s,h={})
+    stylesheet_link_tag(s,h).gsub(/\/stylesheets/,prefixed_url("/stylesheets"))
+  end
+  def special_javascript_include_tag(s)
+    javascript_include_tag(s).gsub(/\/javascripts/,prefixed_url("/javascripts"))
+  end
+  def private_path(s)
+    "/~koji/pages/#{s.name}"
+  end
+
+#----------------------
+  
   def add(s); t2(:label,:add,s) end
   def chain(s1,s2); "#{s1.to_s}.#{s2.to_s}" end
   def current_language; english? ? t(:japanese) : t(:english) end
