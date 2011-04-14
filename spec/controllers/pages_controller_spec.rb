@@ -46,7 +46,7 @@ describe PagesController do
       else
         it "should not reach the #{action} page" do
           send("#{req}", "#{action}", :id => @page.to_param, :project_id => @project.to_param)
-          response.redirect_url.should eq(welcome_url)
+          response.redirect_url.should eq(project_url(@project))
         end
       end
     end    
@@ -67,7 +67,7 @@ describe PagesController do
       else
         it "should not reach the #{action} page" do
           send("#{req}", "#{action}", :id => @page.to_param, :project_id => @project.to_param)
-          response.redirect_url.should eq(welcome_url)
+          response.redirect_url.should eq(project_url(@project))
         end
       end
     end    

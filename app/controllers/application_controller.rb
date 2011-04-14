@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include ControllerAuthentication 
   rescue_from CanCan::AccessDenied do |exception|
     if current_user
+      redirect_to @project and return if @project
       redirect_to welcome_url, :alert => exception.message
     else
       redirect_to login_url, :alert => exception.message

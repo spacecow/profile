@@ -1,3 +1,4 @@
+<% if can? :admin, Project %>
 <h3>Projects</h3>
 
 <br />
@@ -15,4 +16,7 @@
 <div id="bottom_links">
   <%= link_to "New Project", new_project_path if can? :new, Project%>
 </div>
-
+<% else %>
+<i style="float: left; margin-top: 32px;">For contact: jsveholm@riec.tohoku.ac.jp</i>
+<img src="<%= prefixed_url('/images/rails.png') %>" style="float: right;" height="50"/>
+<% end %>

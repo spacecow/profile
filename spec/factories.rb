@@ -1,5 +1,6 @@
 Factory.define :page do |f|
-  f.name "Default-page-name"
+  f.sequence(:name){|n| "Default-page-name-#{n}"}
+  f.sequence(:pos){|n| n}
 end
 
 Factory.define :paper do |f|

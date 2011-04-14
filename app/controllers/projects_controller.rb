@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
 
   def show
     @pages = @project.pages
-    redirect_to [@project,@pages.first] if cannot? :admin, @project
+#    redirect_to [@project,@pages.first] if cannot? :admin, @project
   end
 
   def new

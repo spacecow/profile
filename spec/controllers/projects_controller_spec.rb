@@ -45,7 +45,11 @@ describe ProjectsController do
       else
         it "should not reach the #{action} page" do
           send("#{req}", "#{action}", :id => @project.to_param)
-          response.redirect_url.should eq(welcome_url)
+          if %w(new create).include?(action)
+            response.redirect_url.should eq(projects_url)
+          else
+            response.redirect_url.should eq(project_url(@project))
+          end
         end
       end
     end    
@@ -66,7 +70,11 @@ describe ProjectsController do
       else
         it "should not reach the #{action} page" do
           send("#{req}", "#{action}", :id => @project.to_param)
-          response.redirect_url.should eq(welcome_url)
+          if %w(new create).include?(action)
+            response.redirect_url.should eq(projects_url)
+          else
+            response.redirect_url.should eq(project_url(@project))
+          end
         end
       end
     end    

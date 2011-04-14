@@ -57,8 +57,6 @@ a88f0c: !ruby/object:Dooby::Task
   todo: make factories work with paper upload :done
 7a9861: !ruby/object:Dooby::Task 
   todo: secure download with password :done
-f81258: !ruby/object:Dooby::Task 
-  todo: pages should have a number you can order after
 6769f6: !ruby/object:Dooby::Task 
   todo: remove image&paper remove option from form and add a delete option to the show page :done
 44343f: !ruby/object:Dooby::Task 
@@ -89,3 +87,7 @@ cd46ff: !ruby/object:Dooby::Task
   todo: col3 is to small without col2 :done
 87c84a: !ruby/object:Dooby::Task 
   todo: pictures & settings rspec :done
+f81258: !ruby/object:Dooby::Task 
+  todo: pages should have a number you can order after
+d18fdd: !ruby/object:Dooby::Task 
+  todo: tested pages position count :done

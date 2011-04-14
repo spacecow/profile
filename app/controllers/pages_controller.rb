@@ -14,6 +14,7 @@ class PagesController < ApplicationController
   end
 
   def create
+    @page.pos = last_pos+1
     @project.pages << @page
     if @project.save
       flash[:notice] = "Successfully created page."
@@ -42,7 +43,10 @@ class PagesController < ApplicationController
   end
 
   private
-
+    def last_pos
+      return -1 if Page.count == 0
+      Page.select(:pos).order("pos asc").last.pos
+    end
     def load_project; @project = Project.find_by_name(params[:project_id]) end
     def load_page; @page = @project.pages.find_by_name(params[:id]) end 
 end
