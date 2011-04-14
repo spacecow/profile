@@ -7,7 +7,7 @@ Profile::Application.routes.draw do
   match 'login' => 'sessions#new', :as => :login
   match 'toggle_language' => 'application#toggle_language', :as => :toggle_language
   match 'welcome' => 'projects#index'
-  match 'profile(/:controller(/:id))', :project_id => "mizuno", :action => "show"
+  match '~koji(/:controller(/:id))', :project_id => "mizuno", :action => "show"
   
   resources :sessions
   resources :users do

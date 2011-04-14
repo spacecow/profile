@@ -87,7 +87,7 @@ cd46ff: !ruby/object:Dooby::Task
   todo: col3 is to small without col2 :done
 87c84a: !ruby/object:Dooby::Task 
   todo: pictures & settings rspec :done
-f81258: !ruby/object:Dooby::Task 
-  todo: pages should have a number you can order after
 d18fdd: !ruby/object:Dooby::Task 
   todo: tested pages position count :done
+0a8ad6: !ruby/object:Dooby::Task 
+  todo: pages should have a number you can order after :doing
