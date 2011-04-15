@@ -37,8 +37,7 @@ module ApplicationHelper
   def pdf_link(name,lnk)
     paper = @project.papers.find_by_name(lnk)
     if paper
-      session[:pdf_title] = name
-      link_to(name, private_exchange(password_project_paper_path(@project,paper)))
+      link_to(name, private_exchange(password_project_paper_path(@project,paper, :title => name)))
     else
       lnk
     end

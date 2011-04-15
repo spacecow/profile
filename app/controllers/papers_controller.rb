@@ -9,16 +9,16 @@ class PapersController < ApplicationController
         :filename => @paper.file.filename
       else
         flash[:alert] = alertify(:file_does_not_exist)
-        redirect_to password_project_paper_path(@project,@paper)
+        redirect_to password_project_paper_path(@project,@paper, :title => params[:title])
       end
     else
       flash[:alert] = alertify(:invalid_password)
-      redirect_to password_project_paper_path(@project,@paper)
+      redirect_to password_project_paper_path(@project,@paper, :title => params[:title])
     end
   end
   
   def password
-    @paper.title = session[:pdf_title]
+    @paper.title = params[:title]
   end
 
   def destroy

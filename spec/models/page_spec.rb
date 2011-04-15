@@ -5,22 +5,18 @@ describe Page do
     @project = Factory(:project)
   end
   it "pages in the same project cannot have the same position" do
-    @page = Page.new(:name => "page")
-    @page2 = Page.new(:name => "page2")
+    @page = Factory(:page, :project_id => @project.id)
+    @page2 = Factory(:page, :project_id => @project.id)
     @page2.pos = @page.pos
-    @project.pages << @page
-    @project.pages << @page2
     @page.should be_valid
     @page2.should_not be_valid
   end
 
   it "pages in different projects can have the same position" do
     @project2 = Factory(:project)
-    @page = Page.new(:name => "page")
-    @page2 = Page.new(:name => "page2")
+    @page = Factory(:page, :project_id => @project.id)
+    @page2 = Factory(:page, :project_id => @project2.id)    
     @page2.pos = @page.pos
-    @project.pages << @page
-    @project2.pages << @page2
     @page.should be_valid
     @page2.should be_valid
   end
