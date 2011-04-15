@@ -93,3 +93,5 @@ f81258: !ruby/object:Dooby::Task
   todo: pages should have a number you can order after
 "732343": !ruby/object:Dooby::Task 
   todo: project name in helper methods :done
+0e8b56: !ruby/object:Dooby::Task 
+  todo: make url english :done

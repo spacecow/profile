@@ -45,7 +45,7 @@
       <div id="menu">
         <ul>
           <% @project.pages.each do |page| %>
-          <li><%= link_to page.name, private_path(page) %></li>
+          <li><%= link_to page.menu, private_path(page) %></li>
           <% end %>
         </ul>
         <div id="thumbnail">

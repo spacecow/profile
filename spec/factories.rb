@@ -1,5 +1,6 @@
 Factory.define :page do |f|
   f.sequence(:name){|n| "Default-page-name-#{n}"}
+  f.sequence(:menu){|n| "Default-page-menu-#{n}"}
   f.sequence(:pos){|n| n}
 end
 

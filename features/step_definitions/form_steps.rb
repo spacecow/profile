@@ -21,6 +21,16 @@ When /^I fill in "([^"]*)" with "([^"]*)" within the (.+) section$/ do |fld, txt
   When %(I fill in "#{fld}" with "#{txt}" within "div##{underscore div}")
 end
 
+When /^I create (?:a|an) (\w+) with ("[^"]*")((?:, "[^"]*")*)$/ do |mdl, arg1, arg2|
+  fields = arg2.split(',')
+  fields[0] = arg1
+  fields.each do |field|
+    field =~ /"(.+):\s*(.+)"/
+    When %(I fill in "#{$1}" with "#{$2}")
+  end
+  And %(I press "Create #{mdl.capitalize}")
+end
+
 # Functions ----------------------------
 
 def attr_no(prnt,chld,attr,ordr)
