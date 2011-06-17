@@ -1,0 +1,20 @@
+<% title "Setting" %>
+
+<p>
+  <strong><%= ft(:name) %>:</strong>
+  <%= @setting.name %>
+</p>
+<p>
+  <strong><%= t('formtastic.labels.prefix') %>:</strong>
+  <%= @setting.prefix %>
+</p>
+
+<div id="bottom_links">
+  <% if can? :edit, @setting %>
+    <%= link_to t(:edit), edit_setting_path(@setting) %> |
+  <% end %>
+  <% if can? :delete, @setting %>
+    <%= link_to t(:delete), @setting, :confirm => 'Are you sure?', :method => :delete %> |
+  <% end %>
+  <%= link_to view(:setting), settings_path if can? :index, Setting %>
+</div>

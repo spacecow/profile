@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can [:show,:index], Project
+    can [:index,:show], Project
     can :show, Page
     can :create, User
     can [:password,:download], Paper
@@ -14,11 +14,16 @@ class Ability
       end
       if user.role?(:mini_admin)
         can [:show,:index,:update], User
-        can :index, [Project,Page]
+        can :index, Page
+        can [:show,:index,:admin], Project
+        can [:show,:index], Setting
       end
       if user.role? :admin
         can [:show,:index,:update,:destroy,:edit_roles,:update_roles], User
         can [:show,:index,:create,:update,:destroy], [Project,Page]
+        can :admin, Project
+        can [:destroy], [Paper, Picture]
+        can [:show,:index,:new,:create,:edit,:update,:destroy], Setting
       end
       if user.role? :god
         can :manage, :all

@@ -1,8 +1,45 @@
 <% title @project.title %>
 <% subtitle @project.subtitle %>
 
+<div id="pictures">
+  <h3><%= pl(:picture) %></h3>
+  <% if @project.pictures.empty? %>
+    <i><%= no_dp(:picture) %></i>
+  <% else %>
+    <ul>
+      <% @project.pictures.each do |picture| %>
+        <li>
+          <%= picture.listing %>
+          <%= link_to t(:del), [@project,picture], :confirm => sure?, :method => :delete if can? :destroy, picture%>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div id="papers">
+  <h3><%= pl(:paper) %></h3>
+  <% if @project.papers.empty? %>
+    <i><%= no_dp(:paper) %></i>
+  <% else %>
+    <ul>
+      <% @project.papers.each do |paper| %>
+        <li>
+          <%= paper.listing %>
+          <%= link_to t(:del), [@project,paper], :confirm => sure?, :method => :delete %>
+
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
 <p>
-  <%= link_to "Edit", edit_project_path(@project) %> |
-  <%= link_to "Destroy", @project, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", projects_path %>
+  <% if can? :edit, @project %>
+    <%= link_to "Edit", edit_project_path(@project) %> |
+  <% end %>
+  <% if can? :destroy, @project %>
+    <%= link_to "Destroy", @project, :confirm => 'Are you sure?', :method => :delete %> |
+  <% end %>
+  <%= link_to "View All", projects_path if can? :index, Project%>
 </p>

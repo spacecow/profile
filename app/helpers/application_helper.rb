@@ -22,37 +22,60 @@ module ApplicationHelper
   end
 
   def picture_link(name,lnk)
-    picture = Picture.find_by_name(lnk)
+    picture = @project.pictures.find_by_name(lnk)
     if picture
-      "<a class='thumbnail' href='#{picture.image_url}' data-url='#{picture.image_url(:thumb)}'>#{name}</a>"
+      "<a class='thumbnail' href='#{prefixed_url(picture.image_url)}' data-url='#{prefixed_url(picture.image_url)}'>#{name}</a>"
     else
       lnk
     end
   end
 
+  def main_setting; @main_setting ||= Setting.find_by_name("main") end
+  def prefix; main_setting ? "/#{main_setting.prefix}" : "" end
+  def prefixed_url(s); "#{prefix}#{s}" end
+  
   def pdf_link(name,lnk)
-    paper = Paper.find_by_name(lnk)
+    paper = @project.papers.find_by_name(lnk)
     if paper
-      link_to(name, password_project_paper_path(@project,paper, :title => name))
+      link_to(name, private_exchange(password_project_paper_path(@project,paper, :title => name)))
     else
       lnk
     end
   end
 
-  def add(s); t2(:add,s) end
+# Special routing hack
+  
+  def special_stylesheet_link_tag(s,h={})
+    stylesheet_link_tag(s,h).gsub(/\/stylesheets/,prefixed_url("/stylesheets"))
+  end
+  def special_javascript_include_tag(s)
+    javascript_include_tag(s).gsub(/\/javascripts/,prefixed_url("/javascripts"))
+  end
+  def private_path(s)
+    "/#{@project.name}/pages/#{s.name}"
+  end
+
+#----------------------
+  
+  def add(s); t2(:label,:add,s) end
   def chain(s1,s2); "#{s1.to_s}.#{s2.to_s}" end
   def current_language; english? ? t(:japanese) : t(:english) end
-  def edit(s); t2(:edit,s) end
-  def edit_p(s); tp2(:edit,s) end
+  def d(s); t(s).downcase end
+  def edit(s); t2(:label,:edit,s) end
+  def edit_p(s); tp2(:label,:edit,s) end
   def ft(s); t("formtastic.labels.#{s.to_s}") end
-  def lbl(s); chain(:label,s) end
+  def no_dp(s); tdp2(:message,:none,s) end
+  def dp(s); t(s).match(/\w/) ? d(s).pluralize : d(s) end
+  def new(s); t2(:label,:new,s) end
   def pl(s); t(s).match(/\w/) ? t(s).pluralize : t(s) end
   def remove(s); t2(:remove,s) end
   def sure?; t('message.sure?') end
-  def t2(s1,s2); t(lbl(s1), :obj => t(s2)) end  
-  def tp2(s1,s2); t(lbl(s1), :obj => pl(s2)) end
+  def t2(lbl,s1,s2); t(chain(lbl,s1), :obj => t(s2)) end  
+  def tdp2(lbl,s1,s2); t(chain(lbl,s1), :obj => dp(s2)) end
+  def tp2(lbl,s1,s2); t(chain(lbl,s1), :obj => pl(s2)) end
   def update(s); t2(:update,s) end
-  def update_p(s); tp2(:update,s) end
+  def update_p(s); tp2(:label,:update,s) end
+  def view(s); t2(:label,:view,s) end
   
   private
 

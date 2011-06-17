@@ -2,17 +2,24 @@ class ApplicationController < ActionController::Base
   include ControllerAuthentication 
   rescue_from CanCan::AccessDenied do |exception|
     if current_user
-      redirect_to root_url, :alert => exception.message
+      redirect_to @project and return if @project
+      redirect_to welcome_url, :alert => exception.message
     else
       redirect_to login_url, :alert => exception.message
     end
   end
   protect_from_forgery
 
-  helper_method :english?
+  helper_method :english?,:private_exchange
 
+  def private_exchange(s)
+    s.gsub(/projects\//,"")
+  end
+  
   def alertify(act); t("alert.#{act}") end
+  def created(s); success(:created,s) end
   def d(s); t(s).downcase end
+  def deleted(s); success(:deleted,s) end
   def dp(s); pl(s).downcase end
   def english?; session[:language] == 'en' end
   def pl(s); t(s).match(/\w/) ? t(s).pluralize : t(s) end  

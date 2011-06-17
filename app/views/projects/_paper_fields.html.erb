@@ -1,9 +1,9 @@
 <div id="paper">
-  <div id="category">
+<div id="category">
     Paper Section <br />
     <%= f.check_box :_destroy %>
     <%= f.label :_destroy, t(:remove) %>
-  </div>  
+  </div> 
 <li id="paper_name_input" class="<%= @project.errors['papers.name'].empty? ? '' : 'error'%>">
   <%= f.input :name , :hint => "A unique name for your paper file." %>
   <% unless @project.errors['papers.name'].empty? %>
@@ -14,6 +14,8 @@
   <%= f.label :file %>
   <%= f.file_field :file %>
 </li>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
 <li>
   <%# f.label :caption %>
   <%# f.text_field :caption %>

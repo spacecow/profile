@@ -1,21 +1,22 @@
-<% title "Projects" %>
+<% if can? :admin, Project %>
+<h3>Projects</h3>
 
-<% if can? :new, Project %>
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
-  <% for project in @projects %>
-    <tr>
-      <td><%= project.name %></td>
-      <td><%= link_to "Show", project %></td>
-      <td><%= link_to "Edit", edit_project_path(project) %></td>
-      <td><%= link_to "Destroy", project, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+<br />
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <%= project.name %>
+      <%= link_to "Show", project if can? :show, project %>
+      <%= link_to "Edit", edit_project_path(project) if can? :edit, project %>
+      <%= link_to "Destroy", project, :confirm => sure?, :method => :delete if can? :destroy, project %>
+    </li>
   <% end %>
-</table>
+</ul>
 
-<p><%= link_to "New Project", new_project_path(project) %></p>
+<div id="bottom_links">
+  <%= link_to "New Project", new_project_path if can? :new, Project%>
+</div>
 <% else %>
-  Welcome...
+<i style="float: left; margin-top: 32px;">For contact: jsveholm@riec.tohoku.ac.jp</i>
+<img src="<%= prefixed_url('/images/rails.png') %>" style="float: right;" height="50"/>
 <% end %>

@@ -4,4 +4,6 @@ class Picture < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   validates :name, :presence => true, :uniqueness => {:scope => :project_id}
+
+  def listing; "#{name} (#{image_url ? image.file.filename : ""})" end
 end

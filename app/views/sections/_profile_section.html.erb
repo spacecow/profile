@@ -1,0 +1,26 @@
+<div id="profile_section" class="<%= first ? "first" : "" %>">
+
+<img src="<%= prefixed_url(section.image_url) %>" />
+<div id="table">
+  <h3><%= section.title %></h3>
+  <h4><%= section.subtitle %></h4>
+  <% section.subsections.each do |subsection| %>
+  <div id="row">
+    <% unless subsection.col1.blank? %>
+      <div id="col1"><%= clean subsection.col1 %></div>
+    <% end %>
+    <% unless subsection.col2.blank? %>
+      <div id="col2"><%= clean subsection.col2 %></div>
+    <% end %>
+    <% unless subsection.col3.blank? %>
+      <% if subsection.col2.blank? %>
+        <div id="col3_wide"><%= clean subsection.col3 %></div>
+      <% else %>
+        <div id="col3"><%= clean subsection.col3 %></div>
+      <% end %>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+<div class="clear"></div>
+</div>

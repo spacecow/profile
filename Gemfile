@@ -8,6 +8,8 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'cancan' #rails g cancan:ability
 gem "bcrypt-ruby", :require => "bcrypt"
+gem 'json', '1.4.6'
+gem 'json_pure', '1.4.6'
 
 
 group :development do
@@ -18,10 +20,11 @@ end
 
 group :test do
   # gem 'spork'
-  # gem 'cucumber-rails'
+  # gem 'cucumber-rails', "0.3.2"
+  # gem 'cucumber', '0.10.0'
   # gem 'capybara' #, :git => 'https://github.com/jnicklas/capybara.git'
   # gem 'database_cleaner'
-  # gem 'pickle'
+  # gem 'pickle', "0.4.7", :git => 'https://github.com/spacecow/pickle.git'
   # gem 'launchy'
   # gem 'factory_girl'
   # gem 'gherkin'

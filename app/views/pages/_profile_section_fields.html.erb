@@ -1,0 +1,22 @@
+<li id="profile_section">
+  <div id="category">
+    Profile Section <br />
+    <%= f.check_box :_destroy %>
+    <%= f.label :_destroy, t(:remove) %>
+  </div>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br />
+  <%= f.label :subtitle %>
+  <%= f.text_field :subtitle %><br />
+  <%= f.label :image %>
+  <%= f.file_field :image %><br />  
+  <%= f.hidden_field :type %>
+  <ul>
+    <%= f.semantic_fields_for :subsections do |ref| %>
+      <%= render 'table_subsection_fields', :f => ref %>
+    <% end %>
+    <li>
+      <%= link_to_add_fields add(:table_row), f, :subsections, TableSubsection.new %>
+    </li>
+  </ul>
+</li>

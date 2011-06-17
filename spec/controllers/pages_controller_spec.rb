@@ -19,12 +19,12 @@ describe PagesController do
     pages_controller_actions.each do |action,req|
       if action == "show"
         it "should reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @page.id, :project_id => @project.id)
+          send("#{req}", "#{action}", :id => @page.to_param, :project_id => @project.to_param)
           response.redirect_url.should_not eq(login_url)
         end
       else
         it "should not reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @page.id, :project_id => @project.id)
+          send("#{req}", "#{action}", :id => @page.to_param, :project_id => @project.to_param)
           response.redirect_url.should eq(login_url)
         end
       end
@@ -40,13 +40,13 @@ describe PagesController do
     pages_controller_actions.each do |action,req|
       if action == "show"
         it "should reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @page.id, :project_id => @project.id)
-          response.redirect_url.should_not eq(root_url)
+          send("#{req}", "#{action}", :id => @page.to_param, :project_id => @project.to_param)
+          response.redirect_url.should_not eq(welcome_url)
         end
       else
         it "should not reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @page.id, :project_id => @project.id)
-          response.redirect_url.should eq(root_url)
+          send("#{req}", "#{action}", :id => @page.to_param, :project_id => @project.to_param)
+          response.redirect_url.should eq(project_url(@project))
         end
       end
     end    
@@ -61,13 +61,13 @@ describe PagesController do
     pages_controller_actions.each do |action,req|
       if %w(show index).include?(action)
         it "should reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @page.id, :project_id => @project.id)
-          response.redirect_url.should_not eq(root_url)
+          send("#{req}", "#{action}", :id => @page.to_param, :project_id => @project.to_param)
+          response.redirect_url.should_not eq(welcome_url)
         end
       else
         it "should not reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @page.id, :project_id => @project.id)
-          response.redirect_url.should eq(root_url)
+          send("#{req}", "#{action}", :id => @page.to_param, :project_id => @project.to_param)
+          response.redirect_url.should eq(project_url(@project))
         end
       end
     end    
@@ -81,8 +81,8 @@ describe PagesController do
     
     pages_controller_actions.each do |action,req|
       it "should reach the #{action} page" do
-        send("#{req}", "#{action}", :id => @page.id, :project_id => @project.id)
-        response.redirect_url.should_not eq(root_url)
+        send("#{req}", "#{action}", :id => @page.to_param, :project_id => @project.to_param)
+        response.redirect_url.should_not eq(welcome_url)
       end
     end    
   end
@@ -95,8 +95,8 @@ describe PagesController do
     
     pages_controller_actions.each do |action,req|
       it "should reach the #{action} page" do
-        send("#{req}", "#{action}", :id => @page.id, :project_id => @project.id)
-        response.redirect_url.should_not eq(root_url)
+        send("#{req}", "#{action}", :id => @page.to_param, :project_id => @project.to_param)
+        response.redirect_url.should_not eq(welcome_url)
       end
     end    
   end    

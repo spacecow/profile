@@ -3,8 +3,12 @@ class Page < ActiveRecord::Base
   has_many :sections
   accepts_nested_attributes_for :sections, :allow_destroy => true
   
-  attr_accessible :name, :sections_attributes
+  attr_accessible :name, :menu, :sections_attributes
 
   validates :project_id, :presence => true
   validates :name, :presence => true, :uniqueness => {:scope => :project_id}
+  validates :pos, :uniqueness => {:scope => :project_id}
+  validates :menu, :presence => true, :uniqueness => {:scope => :project_id}
+  
+  def to_param; name end
 end

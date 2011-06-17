@@ -3,12 +3,12 @@ class PapersController < ApplicationController
   before_filter :load_projects
   
   def download
-    if params[:password] == "foobar"
+    if @paper.authenticate(params[:password])
       if @paper.file.url && File.exist?(path = @paper.file.url)
         send_file path, :content_type => "application/#{@paper.extension}",
         :filename => @paper.file.filename
       else
-        flash[:alert] = alert(:file_does_not_exist)
+        flash[:alert] = alertify(:file_does_not_exist)
         redirect_to password_project_paper_path(@project,@paper, :title => params[:title])
       end
     else
@@ -21,8 +21,11 @@ class PapersController < ApplicationController
     @paper.title = params[:title]
   end
 
+  def destroy
+    @paper.destroy
+    redirect_to @project
+  end
+  
   private
-    def load_projects
-      @project = Project.find(params[:project_id])
-    end
+    def load_projects; @project = Project.find_by_name(params[:project_id]) end
 end

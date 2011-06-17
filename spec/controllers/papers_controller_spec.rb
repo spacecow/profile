@@ -12,19 +12,19 @@ describe PapersController do
 
   before(:each) do
     @project = Factory(:project)
-    @paper = Factory(:paper, :project_id => @project.id)
+    @paper = Factory(:paper, :project_id => @project.to_param)
   end
   
   describe "a user is not logged in" do  
     papers_controller_actions.each do |action,req|
       if %w(password download).include?(action)        
         it "should reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
+          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.to_param)
           response.redirect_url.should_not eq(login_url)
         end
       else
         it "should not reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
+          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.to_param)
           response.redirect_url.should eq(login_url)
         end
       end
@@ -40,13 +40,13 @@ describe PapersController do
     papers_controller_actions.each do |action,req|
       if %w(password download).include?(action)        
         it "should reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
-          response.redirect_url.should_not eq(root_url)
+          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.to_param)
+          response.redirect_url.should_not eq(welcome_url)
         end
       else
         it "should not reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
-          response.redirect_url.should eq(root_url)
+          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.to_param)
+          response.redirect_url.should eq(welcome_url)
         end
       end
     end    
@@ -61,13 +61,13 @@ describe PapersController do
     papers_controller_actions.each do |action,req|
       if %w(password download).include?(action)        
         it "should reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
-          response.redirect_url.should_not eq(root_url)
+          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.to_param)
+          response.redirect_url.should_not eq(welcome_url)
         end
       else
         it "should not reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
-          response.redirect_url.should eq(root_url)
+          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.to_param)
+          response.redirect_url.should eq(welcome_url)
         end
       end
     end    
@@ -80,15 +80,15 @@ describe PapersController do
     end
     
     papers_controller_actions.each do |action,req|
-      if %w(password download).include?(action)        
+      if %w(password download destroy).include?(action)        
         it "should reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
-          response.redirect_url.should_not eq(root_url)
+          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.to_param)
+          response.redirect_url.should_not eq(welcome_url)
         end
       else
         it "should not reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
-          attr_reader :esponse.redirect_url.should eq(root_url)
+          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.to_param)
+          response.redirect_url.should eq(welcome_url)
         end
       end
     end    
@@ -101,16 +101,9 @@ describe PapersController do
     end
     
     papers_controller_actions.each do |action,req|
-      if %w(password download).include?(action)
-        it "should reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
-          response.redirect_url.should_not eq(root_url)
-        end
-      else
-        it "should not reach the #{action} page" do
-          send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.id)
-          response.redirect_url.should eq(root_url)
-        end
+      it "should reach the #{action} page" do
+        send("#{req}", "#{action}", :id => @paper.id, :project_id => @project.to_param)
+        response.redirect_url.should_not eq(welcome_url)
       end
     end    
   end    
